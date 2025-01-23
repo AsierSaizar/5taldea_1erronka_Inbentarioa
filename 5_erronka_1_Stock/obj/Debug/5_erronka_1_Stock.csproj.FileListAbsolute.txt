@@ -1,0 +1,82 @@
+C:\Users\asier\Desktop\Proiektuak-Lanak\2.URTEA\ARIKETAK\Biltegiratze sisetamak\C# Proiektuak\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\5_erronka_1_Stock.exe.config
+C:\Users\asier\Desktop\Proiektuak-Lanak\2.URTEA\ARIKETAK\Biltegiratze sisetamak\C# Proiektuak\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\5_erronka_1_Stock.exe
+C:\Users\asier\Desktop\Proiektuak-Lanak\2.URTEA\ARIKETAK\Biltegiratze sisetamak\C# Proiektuak\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\5_erronka_1_Stock.pdb
+C:\Users\asier\Desktop\Proiektuak-Lanak\2.URTEA\ARIKETAK\Biltegiratze sisetamak\C# Proiektuak\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\5_erronka_1_Stock.csproj.AssemblyReference.cache
+C:\Users\asier\Desktop\Proiektuak-Lanak\2.URTEA\ARIKETAK\Biltegiratze sisetamak\C# Proiektuak\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\_5_erronka_1_Stock.LogIn.resources
+C:\Users\asier\Desktop\Proiektuak-Lanak\2.URTEA\ARIKETAK\Biltegiratze sisetamak\C# Proiektuak\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\_5_erronka_1_Stock.Properties.Resources.resources
+C:\Users\asier\Desktop\Proiektuak-Lanak\2.URTEA\ARIKETAK\Biltegiratze sisetamak\C# Proiektuak\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\5_erronka_1_Stock.csproj.GenerateResource.cache
+C:\Users\asier\Desktop\Proiektuak-Lanak\2.URTEA\ARIKETAK\Biltegiratze sisetamak\C# Proiektuak\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\5_erronka_1_Stock.csproj.CoreCompileInputs.cache
+C:\Users\asier\Desktop\Proiektuak-Lanak\2.URTEA\ARIKETAK\Biltegiratze sisetamak\C# Proiektuak\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\5_erronka_1_Stock.exe
+C:\Users\asier\Desktop\Proiektuak-Lanak\2.URTEA\ARIKETAK\Biltegiratze sisetamak\C# Proiektuak\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\5_erronka_1_Stock.pdb
+C:\Users\asier\Desktop\Proiektuak-Lanak\2.URTEA\ARIKETAK\Biltegiratze sisetamak\C# Proiektuak\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\_5_erronka_1_Stock.Menua.resources
+C:\Users\asier\Desktop\Proiektuak-Lanak\2.URTEA\ARIKETAK\Biltegiratze sisetamak\C# Proiektuak\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\_5_erronka_1_Stock.Platerak.resources
+C:\Users\asier\Desktop\Proiektuak-Lanak\2.URTEA\ARIKETAK\Biltegiratze sisetamak\C# Proiektuak\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\_5_erronka_1_Stock.Stock.resources
+C:\Users\asier\Desktop\Proiektuak-Lanak\2.URTEA\ARIKETAK\Biltegiratze sisetamak\C# Proiektuak\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\_5_erronka_1_Stock.Stock_Eraldatu.resources
+C:\Users\asier\Desktop\Proiektuak-Lanak\2.URTEA\ARIKETAK\Biltegiratze sisetamak\C# Proiektuak\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\_5_erronka_1_Stock.Stock_Ezabatu.resources
+C:\Users\asier\Desktop\Proiektuak-Lanak\2.URTEA\ARIKETAK\Biltegiratze sisetamak\C# Proiektuak\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\_5_erronka_1_Stock.Stock_Sortu.resources
+C:\Users\asier\Desktop\Proiektuak-Lanak\2.URTEA\ARIKETAK\Biltegiratze sisetamak\C# Proiektuak\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\_5_erronka_1_Stock.Platerak_Eraldatu.resources
+C:\Users\asier\Desktop\Proiektuak-Lanak\2.URTEA\ARIKETAK\Biltegiratze sisetamak\C# Proiektuak\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\_5_erronka_1_Stock.Platerak_Ezabatu.resources
+C:\Users\asier\Desktop\Proiektuak-Lanak\2.URTEA\ARIKETAK\Biltegiratze sisetamak\C# Proiektuak\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\_5_erronka_1_Stock.Platerak_Sortu.resources
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\5_erronka_1_Stock.exe.config
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\5_erronka_1_Stock.exe
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\5_erronka_1_Stock.pdb
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\5_erronka_1_Stock.csproj.AssemblyReference.cache
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\_5_erronka_1_Stock.LogIn.resources
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\_5_erronka_1_Stock.Menua.resources
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\_5_erronka_1_Stock.Properties.Resources.resources
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\5_erronka_1_Stock.csproj.GenerateResource.cache
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\5_erronka_1_Stock.csproj.CoreCompileInputs.cache
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\5_erronka_1_Stock.exe
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\5_erronka_1_Stock.pdb
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\Antlr3.Runtime.dll
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\Google.Protobuf.dll
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\Iesi.Collections.dll
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\MySql.Data.dll
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\NHibernate.dll
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\Remotion.Linq.dll
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\Remotion.Linq.EagerFetching.dll
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\System.Buffers.dll
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\System.IO.Pipelines.dll
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\System.Memory.dll
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\ZstdSharp.dll
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\Antlr3.Runtime.xml
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\Google.Protobuf.pdb
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\Google.Protobuf.xml
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\Iesi.Collections.xml
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\MySql.Data.xml
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\NHibernate.xml
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\Remotion.Linq.xml
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\Remotion.Linq.EagerFetching.xml
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\System.Buffers.xml
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\System.IO.Pipelines.xml
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\System.Memory.xml
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\5_erronka_1_Stock.csproj.SuggestedBindingRedirects.cache
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\5_erronka_1_Stock.exe.config
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\5_erronka_1_Stock.csproj.CopyComplete
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\_5_erronka_1_Stock.Platerak_View.resources
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\_5_erronka_1_Stock.Stock_View.resources
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\Hbm_Xml\Langilea.hbm.xml
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\Hbm_Xml\Platerak.hbm.xml
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\Hbm_Xml\Stock.hbm.xml
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\_5_erronka_1_Stock.View.STOCK_VIEWS.Stock_Create.resources
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\_5_erronka_1_Stock.View.STOCK_VIEWS.Stock_Edit.resources

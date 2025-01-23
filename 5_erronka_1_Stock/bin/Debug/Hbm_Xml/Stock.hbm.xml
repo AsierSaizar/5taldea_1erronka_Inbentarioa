@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="5_erronka_1_Stock"
+                   namespace="_5_erronka_1_Stock">
+
+
+	<class name="Stock" table="almazena">
+		<id name="Id" column="id" type="int">
+			<generator class="identity" />
+		</id>
+		<!-- Los nombres de la propiedades deben de coincidir con los nombres de tu tabla de la base de datos en la propiedad column -->
+		<property name="Izena" column="izena" type="string"/>
+		<property name="Mota" column="mota" type="string"/>
+		<property name="Ezaugarriak" column="ezaugarria" type="string"/>
+		<property name="Stock_Kant" column="stock" type="int"/>
+		<property name="Unitatea" column="unitatea" type="string"/>
+		<property name="Min" column="min" type="int"/>
+		<property name="Max" column="max" type="int"/>
+
+
+	</class>
+
+</hibernate-mapping>

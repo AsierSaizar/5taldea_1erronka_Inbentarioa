@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="5_erronka_1_Stock"
+                   namespace="_5_erronka_1_Stock">
+
+
+	<class name="Platerak" table="platera">
+		<id name="Id" column="id" type="int">
+			<generator class="identity" />
+		</id>
+		<!-- Los nombres de la propiedades deben de coincidir con los nombres de tu tabla de la base de datos en la propiedad column -->
+		<property name="Izena" column="izena" type="string"/>
+		<property name="Deskribapena" column="deskribapena" type="string"/>
+		<property name="Mota" column="mota" type="string"/>
+		<property name="Platera_mota" column="platera_mota" type="string"/>
+		<property name="Prezioa" column="prezioa" type="int"/>
+		<property name="Kantidadea" column="kantidadea" type="int"/>
+		<property name="Menu" column="menu" type="boolean"/>
+
+
+	</class>
+
+</hibernate-mapping>

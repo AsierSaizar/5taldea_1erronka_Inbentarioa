@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="5_erronka_1_Stock"
+                   namespace="_5_erronka_1_Stock">
+	
+
+	<class name="Langilea" table="langilea">
+		<id name="Id" column="id" type="int">
+			<generator class="identity" />
+		</id>
+		<!-- Los nombres de la propiedades deben de coincidir con los nombres de tu tabla de la base de datos en la propiedad column -->
+		<property name="Emaila" column="email" type="string"/>
+		<property name="Pasahitza" column="pasahitza" type="string"/>
+		
+		<property name="Nivel_permisos" column="nivel_permisos" type="int"/>
+		
+		
+	</class>
+
+</hibernate-mapping>
