@@ -16,5 +16,11 @@ namespace _5_erronka_1_Stock
         public virtual string Unitatea { get; set; }
         public virtual int Min { get; set; }
         public virtual int Max { get; set; }
+        public virtual String created_at { get; set; }
+        public virtual int created_by { get; set; }
+        public virtual String updated_at { get; set; }
+        public virtual int updated_by { get; set; }
+        public virtual String deleted_at { get; set; }
+        public virtual int deleted_by { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using _5_erronka_1_Stock.Kudeatzaileak;
+using NHibernate;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,9 @@ namespace _5_erronka_1_Stock.View.STOCK_VIEWS
 {
     public partial class Stock_Create : Form
     {
+        private NHibernate.Cfg.Configuration myConfiguration;
+        private ISessionFactory mySessionFactory;
+        private ISession mySession;
         public Stock_Create()
         {
             InitializeComponent();
@@ -54,9 +59,80 @@ namespace _5_erronka_1_Stock.View.STOCK_VIEWS
 
         }
 
+        private void Button_login_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         private void button_login_Click(object sender, EventArgs e)
         {
+            //Konfigurazioa sortzen da BD-arekin konektatzeko app.config-en definitzen dena.
+            myConfiguration = new NHibernate.Cfg.Configuration();
+            myConfiguration.Configure();
+            mySessionFactory = myConfiguration.BuildSessionFactory();
+            mySession = mySessionFactory.OpenSession();
 
+
+            String izena = textBox_izena.Text; 
+            String mota = textBox_Mota.Text; 
+            String ezaugarriak = textBox_Ezaugarriak.Text; 
+            int stock_Kant = Convert.ToInt16(textBoxStockKant.Text);
+            String unitatea = textBox_Unitatea.Text; 
+            int min = Convert.ToInt16(textBoxMin.Text); 
+            int max = Convert.ToInt16(textBoxMax.Text);
+
+            String result = Stock_Sortu(izena, mota, ezaugarriak, stock_Kant, unitatea, min, max);
+            if (result == "true")
+            {
+                MessageBox.Show("Produktua ondo sortu da ");
+                //stock_View.CargarDatos();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show(result);
+            }
+            
+            
+
+
+
+
+        }
+
+        private String Stock_Sortu(string izena, string mota, string ezaugarriak, int stock_Kant, string unitatea, int min, int max)
+        {
+            using (var transaction = mySession.BeginTransaction())
+            {
+                try
+                {
+                    Stock produktua = new Stock
+                    {
+                        Izena = izena,
+                        Mota = mota,
+                        Ezaugarriak = ezaugarriak,
+                        Stock_Kant = stock_Kant,
+                        Unitatea = unitatea,
+                        Min = min,
+                        Max = max,
+                        created_at = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                        created_by = 2
+
+                    };
+                    mySession.Save(produktua);
+                    transaction.Commit();  // Asegúrate de confirmar la transacción
+                    return "true";
+
+
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();  // Si hay un error, revierte la transacción
+                    MessageBox.Show("Error: " + ex.Message);
+
+                    return "Error: " + ex.Message;
+                }
+            }
         }
     }
 }

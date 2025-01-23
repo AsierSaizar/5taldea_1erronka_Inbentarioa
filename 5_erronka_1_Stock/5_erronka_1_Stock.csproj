@@ -117,6 +117,7 @@
   <ItemGroup>
     <Compile Include="Klasek\Langilea.cs" />
     <Compile Include="Kudeatzaileak\Langilea_Kudeatzailea.cs" />
+    <Compile Include="Kudeatzaileak\Stock_Kudeatzailea.cs" />
     <Compile Include="View\Menua.cs">
       <SubType>Form</SubType>
     </Compile>

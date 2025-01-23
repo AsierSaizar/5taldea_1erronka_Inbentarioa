@@ -16,6 +16,12 @@
 		<property name="Unitatea" column="unitatea" type="string"/>
 		<property name="Min" column="min" type="int"/>
 		<property name="Max" column="max" type="int"/>
+		<property name="created_at" column="created_at" type="string"/>
+		<property name="created_by" column="created_by" type="int"/>
+		<property name="updated_at" column="updated_at" type="string"/>
+		<property name="updated_by" column="updated_by" type="int"/>
+		<property name="deleted_at" column="deleted_at" type="string"/>
+		<property name="deleted_by" column="deleted_by" type="int"/>
 
 
 	</class>
