@@ -9,16 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _5_erronka_1_Stock
+namespace _5_erronka_1_Stock.View.STOCK_VIEWS
 {
-    public partial class Menua : Form
+    public partial class Stock_Bete : Form
     {
+
         private ISessionFactory sessionFactory;
-        public Menua(ISessionFactory sessionFactory)
+        public Stock_Bete(ISessionFactory sessionFactory)
         {
             InitializeComponent();
             this.sessionFactory = sessionFactory ?? throw new ArgumentNullException(nameof(sessionFactory));
-
         }
         protected override void OnLoad(EventArgs e)
         {
@@ -30,39 +30,16 @@ namespace _5_erronka_1_Stock
             this.Visible = true; // Muestra la ventana cuando esté lista
         }
 
+        private void Stock_Bete_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            Stock_View s = new Stock_View(sessionFactory);
-            s.Show();
+            Stock_View CV = new Stock_View(sessionFactory);
+            CV.Show();
             this.Close();
-        }
-
-        private void Platerak_Menu_Btn_Click(object sender, EventArgs e)
-        {
-            Platerak_View p = new Platerak_View(sessionFactory);
-            p.Show();
-            this.Close();
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            
-            this.Close();
-        }
-
-        private void Menua_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -9,18 +9,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using NHibernate.Cfg;
+
 
 namespace _5_erronka_1_Stock
 {
+
     public partial class LogIn : Form
     {
-        private NHibernate.Cfg.Configuration myConfiguration;
-        private ISessionFactory mySessionFactory;
+        private ISessionFactory sessionFactory;
         private ISession mySession;
 
         public LogIn()
         {
             InitializeComponent();
+            ConfigureNHibernate();
+        }
+        private void ConfigureNHibernate()
+        {
+            try
+            {
+                var configuration = new Configuration();
+                configuration.Configure(); // Carga la configuración desde App.config o hibernate.cfg.xml
+                sessionFactory = configuration.BuildSessionFactory();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Errorea NHibernate konfiguratzean: {ex.Message}",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         protected override void OnLoad(EventArgs e)
         {
@@ -59,11 +76,7 @@ namespace _5_erronka_1_Stock
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Konfigurazioa sortzen da BD-arekin konektatzeko app.config-en definitzen dena.
-            myConfiguration = new NHibernate.Cfg.Configuration();
-            myConfiguration.Configure();
-            mySessionFactory = myConfiguration.BuildSessionFactory();
-            mySession = mySessionFactory.OpenSession();
+            
 
 
             // Obtener los valores del formulario
@@ -71,14 +84,14 @@ namespace _5_erronka_1_Stock
             //string pasahitza = textBox_pasahitza.Text.Trim();
             string email = "asier@gmail.com";
             string pasahitza = "123";
-
-            using (var transaction = mySession.BeginTransaction())
+            using (var session = sessionFactory.OpenSession())
+            using (var transaction = session.BeginTransaction())
             {
                 try
                 {
                     // Crear la consulta HQL para buscar al usuario
                     string hql = "FROM Langilea WHERE Emaila = :email AND Pasahitza = :pasahitza AND Nivel_permisos = 0";
-                    IQuery query = mySession.CreateQuery(hql);
+                    IQuery query = session.CreateQuery(hql);
                     query.SetParameter("email", email);
                     query.SetParameter("pasahitza", pasahitza);
 
@@ -89,7 +102,7 @@ namespace _5_erronka_1_Stock
                     {
                         // Usuario encontrado
                         MessageBox.Show("Inicio de sesión exitoso.");
-                        Menua m = new Menua();
+                        Menua m = new Menua(sessionFactory);
                         m.Show();
 
                     }

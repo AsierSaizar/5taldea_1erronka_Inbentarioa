@@ -1,5 +1,7 @@
 ﻿using _5_erronka_1_Stock.View.STOCK_VIEWS;
 using NHibernate;
+using NHibernate.Mapping;
+using Org.BouncyCastle.Asn1.Cms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,16 +16,18 @@ namespace _5_erronka_1_Stock
 {
     public partial class Stock_View : Form
     {
+        private ISessionFactory sessionFactory;
 
-        public Stock_View()
+        public Stock_View(ISessionFactory sessionFactory)
         {
             InitializeComponent();
-            Kontsultak_Load();
+            this.sessionFactory = sessionFactory ?? throw new ArgumentNullException(nameof(sessionFactory));
 
         }
 
         protected override void OnLoad(EventArgs e)
         {
+            CargarDatos();
             this.Visible = false; // Oculta la ventana mientras carga
             base.OnLoad(e);
 
@@ -31,25 +35,14 @@ namespace _5_erronka_1_Stock
             this.WindowState = FormWindowState.Maximized; // Asegúrate de que esté maximizado
             this.Visible = true; // Muestra la ventana cuando esté lista
         }   
-        private NHibernate.Cfg.Configuration myConfiguration;
-        private ISessionFactory mySessionFactory;
-        private ISession mySession;
+        
 
-        private void Kontsultak_Load()
+       
+
+        public void CargarDatos()
         {
-            // Configuración de NHibernate para conectarse a la base de datos
-            myConfiguration = new NHibernate.Cfg.Configuration();
-            myConfiguration.Configure(); // Carga la configuración desde app.config
-            mySessionFactory = myConfiguration.BuildSessionFactory();
-            mySession = mySessionFactory.OpenSession();
-
-            // Cargar los datos al abrir la pestaña
-            CargarDatos();
-        }
-
-        private void CargarDatos()
-        {
-            using (var transaction = mySession.BeginTransaction())
+            using (var session = sessionFactory.OpenSession())
+            using (var transaction = session.BeginTransaction())
             {
                 try
                 {
@@ -57,7 +50,7 @@ namespace _5_erronka_1_Stock
                     string hql = "FROM Stock";
                     
 
-                    IQuery query = mySession.CreateQuery(hql);
+                    IQuery query = session.CreateQuery(hql);
 
                     // Ejecuta la consulta y obtén los resultados como una lista
                     IList<Stock> stockList = query.List<Stock>();
@@ -70,7 +63,7 @@ namespace _5_erronka_1_Stock
                 catch (Exception ex)
                 {
                     transaction.Rollback(); // Revierte la transacción en caso de error
-                    MessageBox.Show("Error: " + ex.Message);
+                    //MessageBox.Show("Error: " + ex.Message);
                 }
             }
         }
@@ -106,7 +99,7 @@ namespace _5_erronka_1_Stock
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Menua m = new Menua();
+            Menua m = new Menua(sessionFactory);
             m.Show();
             this.Close();
         }
@@ -143,14 +136,191 @@ namespace _5_erronka_1_Stock
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Stock_Create SC = new Stock_Create();
+            Stock_Create SC = new Stock_Create(sessionFactory);
             SC.Show();
+            this.Close();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Stock_Edit SE = new Stock_Edit();
-            SE.Show();
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                var selectedRow = dataGridView1.SelectedRows[0];
+
+                // Extraer datos de las columnas con manejo de valores null
+                var dataToPass_Id = selectedRow.Cells[0].Value?.ToString() ?? string.Empty;
+                var dataToPass_Izena = selectedRow.Cells[1].Value?.ToString() ?? string.Empty;
+                var dataToPass_Mota = selectedRow.Cells[2].Value?.ToString() ?? string.Empty;
+                var dataToPass_Ezaugarriak = selectedRow.Cells[3].Value?.ToString() ?? string.Empty;
+                var dataToPass_StockKant = selectedRow.Cells[4].Value?.ToString() ?? string.Empty;
+                var dataToPass_Unitatea = selectedRow.Cells[5].Value?.ToString() ?? string.Empty;
+                var dataToPass_Min = selectedRow.Cells[6].Value?.ToString() ?? string.Empty;
+                var dataToPass_Max = selectedRow.Cells[7].Value?.ToString() ?? string.Empty;
+
+                Stock_Edit SE = new Stock_Edit(sessionFactory);
+
+                // Pasar datos al formulario Stock_Edit
+                SE.selectedId = dataToPass_Id;
+                SE.selectedIzena = dataToPass_Izena;
+                SE.selectedMota = dataToPass_Mota;
+                SE.selectedEzaugarriak = dataToPass_Ezaugarriak;
+                SE.selectedStockKant = dataToPass_StockKant;
+                SE.selectedUnitatea = dataToPass_Unitatea;
+                SE.selectedMin = dataToPass_Min;
+                SE.selectedMax = dataToPass_Max;
+
+                SE.Show();
+                this.Close();
+            }
+            else
+            {
+                // No hay filas seleccionadas
+                MessageBox.Show("No hay ningún registro seleccionado.");
+            }
+
+            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                var selectedRow = dataGridView1.SelectedRows[0];
+
+                // Extraer datos de las columnas con manejo de valores null
+                int Id = Convert.ToInt16(selectedRow.Cells[0].Value?.ToString() ?? string.Empty);
+                var deleted_at = selectedRow.Cells[12].Value?.ToString() ?? string.Empty;
+                if (deleted_at=="")
+                {
+                    DialogResult dr = MessageBox.Show("Produktua ezabatu nahi duzu?",
+                      "Konfirmazioa ezabatzeko", MessageBoxButtons.YesNo);
+                    switch (dr)
+                    {
+                        case DialogResult.Yes:
+                            String result = Stock_Ezabatu(Id);
+
+                            if (result == "true")
+                            {
+                                MessageBox.Show("Produktua ondo ezabatu da ");
+                                Stock_View SV = new Stock_View(sessionFactory);
+                                SV.Show();
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show(result);
+                            }
+                            break;
+                        case DialogResult.No:
+
+                            break;
+                    }
+                }
+                else
+                {
+                    DialogResult dr = MessageBox.Show("Produktua ezabatuta dago iada\nProduktua berreskuratu nahi duzu?",
+                      "Konfirmazioa berreskuratzeko", MessageBoxButtons.YesNo);
+                    switch (dr)
+                    {
+                        case DialogResult.Yes:
+                            String result = Stock_Berreskuratu(Id);
+
+                            if (result == "true")
+                            {
+                                MessageBox.Show("Produktua ondo berreskuratu da ");
+                                Stock_View SV = new Stock_View(sessionFactory);
+                                SV.Show();
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show(result);
+                            }
+                            break;
+                        case DialogResult.No:
+
+                            break;
+                    }
+                }
+
+
+            }
+            else
+            {
+                // No hay filas seleccionadas
+                MessageBox.Show("No hay ningún registro seleccionado.");
+            }
+        }
+
+        private string Stock_Berreskuratu(int id)
+        {
+            using (var session = sessionFactory.OpenSession())
+            using (var transaction = session.BeginTransaction())
+            {
+                try
+                {
+                    // Recuperar el registro existente por ID
+                    var produktua = session.Query<Stock>().FirstOrDefault(f => f.Id == id);
+                    if (produktua == null)
+                    {
+                        return "Error: El producto con el ID especificado no existe.";
+                    }
+
+                    produktua.deleted_at = "";
+                    produktua.deleted_by = 0;
+
+                    session.Update(produktua);
+                    transaction.Commit();  // Confirmar la transacción
+
+                    return "true";
+
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();  // Si hay un error, revierte la transacción
+
+                    return "Error: " + ex.Message;
+                }
+            }
+        }
+
+        private string Stock_Ezabatu(int id)
+        {
+            using (var session = sessionFactory.OpenSession())
+            using (var transaction = session.BeginTransaction())
+            {
+                try
+                {
+                    // Recuperar el registro existente por ID
+                    var produktua = session.Query<Stock>().FirstOrDefault(f => f.Id == id);
+                    if (produktua == null)
+                    {
+                        return "Error: El producto con el ID especificado no existe.";
+                    }
+
+                    produktua.deleted_at = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                    produktua.deleted_by = 2;
+
+                    session.Update(produktua);
+                    transaction.Commit();  // Confirmar la transacción
+
+                    return "true";
+
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();  // Si hay un error, revierte la transacción
+
+                    return "Error: " + ex.Message;
+                }
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Stock_Bete SB = new Stock_Bete(sessionFactory);
+            SB.Show();
+            this.Close();
         }
     }
 }

@@ -80,3 +80,4 @@ C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\Hbm_Xml\Pla
 C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Debug\Hbm_Xml\Stock.hbm.xml
 C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\_5_erronka_1_Stock.View.STOCK_VIEWS.Stock_Create.resources
 C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\_5_erronka_1_Stock.View.STOCK_VIEWS.Stock_Edit.resources
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\obj\Debug\_5_erronka_1_Stock.View.STOCK_VIEWS.Stock_Bete.resources

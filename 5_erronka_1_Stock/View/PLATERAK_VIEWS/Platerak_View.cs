@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NHibernate;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,9 +14,11 @@ namespace _5_erronka_1_Stock
 {
     public partial class Platerak_View : Form
     {
-        public Platerak_View()
+        private ISessionFactory sessionFactory;
+        public Platerak_View(ISessionFactory sessionFactory)
         {
             InitializeComponent();
+            this.sessionFactory = sessionFactory ?? throw new ArgumentNullException(nameof(sessionFactory));
         }
 
         protected override void OnLoad(EventArgs e)
@@ -33,7 +36,7 @@ namespace _5_erronka_1_Stock
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            Menua m = new Menua();
+            Menua m = new Menua(sessionFactory);
             m.Show();
             this.Close();
         }
