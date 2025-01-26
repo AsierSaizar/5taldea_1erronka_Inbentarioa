@@ -15,10 +15,13 @@ namespace _5_erronka_1_Stock.View.STOCK_VIEWS
     public partial class Stock_Create : Form
     {
         private ISessionFactory sessionFactory;
-        public Stock_Create(ISessionFactory sessionFactory)
+        private int idUsuario;
+
+        public Stock_Create(ISessionFactory sessionFactory, int idUsuario)
         {
             InitializeComponent();
             this.sessionFactory = sessionFactory ?? throw new ArgumentNullException(nameof(sessionFactory));
+            this.idUsuario = idUsuario;
         }
 
         protected override void OnLoad(EventArgs e)
@@ -35,7 +38,7 @@ namespace _5_erronka_1_Stock.View.STOCK_VIEWS
         private void button1_Click(object sender, EventArgs e)
         {
 
-            Stock_View SV = new Stock_View(sessionFactory);
+            Stock_View SV = new Stock_View(sessionFactory, idUsuario);
             SV.Show(); 
             this.Close();
 
@@ -86,7 +89,7 @@ namespace _5_erronka_1_Stock.View.STOCK_VIEWS
                 {
                     MessageBox.Show("Produktua ondo sortu da ");
 
-                    Stock_View SV = new Stock_View(sessionFactory);
+                    Stock_View SV = new Stock_View(sessionFactory, idUsuario);
                     SV.Show();
                     this.Close();
                 }
@@ -127,7 +130,7 @@ namespace _5_erronka_1_Stock.View.STOCK_VIEWS
                         Min = min,
                         Max = max,
                         created_at = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
-                        created_by = 2
+                        created_by = idUsuario
 
                     };
                     session.Save(produktua);

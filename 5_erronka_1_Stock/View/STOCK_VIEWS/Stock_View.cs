@@ -17,12 +17,13 @@ namespace _5_erronka_1_Stock
     public partial class Stock_View : Form
     {
         private ISessionFactory sessionFactory;
+        private int idUsuario;
 
-        public Stock_View(ISessionFactory sessionFactory)
+        public Stock_View(ISessionFactory sessionFactory, int idUsuario)
         {
             InitializeComponent();
             this.sessionFactory = sessionFactory ?? throw new ArgumentNullException(nameof(sessionFactory));
-
+            this.idUsuario = idUsuario;
         }
 
         protected override void OnLoad(EventArgs e)
@@ -99,7 +100,7 @@ namespace _5_erronka_1_Stock
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Menua m = new Menua(sessionFactory);
+            Menua m = new Menua(sessionFactory, idUsuario);
             m.Show();
             this.Close();
         }
@@ -136,7 +137,7 @@ namespace _5_erronka_1_Stock
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Stock_Create SC = new Stock_Create(sessionFactory);
+            Stock_Create SC = new Stock_Create(sessionFactory, idUsuario);
             SC.Show();
             this.Close();
         }
@@ -157,9 +158,10 @@ namespace _5_erronka_1_Stock
                 var dataToPass_Min = selectedRow.Cells[6].Value?.ToString() ?? string.Empty;
                 var dataToPass_Max = selectedRow.Cells[7].Value?.ToString() ?? string.Empty;
 
-                Stock_Edit SE = new Stock_Edit(sessionFactory);
+                Stock_Edit SE = new Stock_Edit(sessionFactory, idUsuario);
 
                 // Pasar datos al formulario Stock_Edit
+                
                 SE.selectedId = dataToPass_Id;
                 SE.selectedIzena = dataToPass_Izena;
                 SE.selectedMota = dataToPass_Mota;
@@ -202,9 +204,7 @@ namespace _5_erronka_1_Stock
                             if (result == "true")
                             {
                                 MessageBox.Show("Produktua ondo ezabatu da ");
-                                Stock_View SV = new Stock_View(sessionFactory);
-                                SV.Show();
-                                this.Close();
+                                CargarDatos();
                             }
                             else
                             {
@@ -228,9 +228,7 @@ namespace _5_erronka_1_Stock
                             if (result == "true")
                             {
                                 MessageBox.Show("Produktua ondo berreskuratu da ");
-                                Stock_View SV = new Stock_View(sessionFactory);
-                                SV.Show();
-                                this.Close();
+                                CargarDatos();
                             }
                             else
                             {
@@ -299,7 +297,7 @@ namespace _5_erronka_1_Stock
                     }
 
                     produktua.deleted_at = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                    produktua.deleted_by = 2;
+                    produktua.deleted_by = idUsuario;
 
                     session.Update(produktua);
                     transaction.Commit();  // Confirmar la transacción
@@ -318,7 +316,7 @@ namespace _5_erronka_1_Stock
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Stock_Bete SB = new Stock_Bete(sessionFactory);
+            Stock_Bete SB = new Stock_Bete(sessionFactory, idUsuario);
             SB.Show();
             this.Close();
         }

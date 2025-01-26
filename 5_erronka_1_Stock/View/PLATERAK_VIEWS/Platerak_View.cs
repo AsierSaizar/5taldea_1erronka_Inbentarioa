@@ -15,10 +15,12 @@ namespace _5_erronka_1_Stock
     public partial class Platerak_View : Form
     {
         private ISessionFactory sessionFactory;
-        public Platerak_View(ISessionFactory sessionFactory)
+        private int idUsuario;
+        public Platerak_View(ISessionFactory sessionFactory, int idUsuario)
         {
             InitializeComponent();
             this.sessionFactory = sessionFactory ?? throw new ArgumentNullException(nameof(sessionFactory));
+            this.idUsuario = idUsuario;
         }
 
         protected override void OnLoad(EventArgs e)
@@ -36,7 +38,7 @@ namespace _5_erronka_1_Stock
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            Menua m = new Menua(sessionFactory);
+            Menua m = new Menua(sessionFactory, idUsuario);
             m.Show();
             this.Close();
         }

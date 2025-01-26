@@ -82,7 +82,7 @@ namespace _5_erronka_1_Stock
             // Obtener los valores del formulario
             //string email = textBox_email.Text.Trim();
             //string pasahitza = textBox_pasahitza.Text.Trim();
-            string email = "asier@gmail.com";
+            string email = "a";
             string pasahitza = "123";
             using (var session = sessionFactory.OpenSession())
             using (var transaction = session.BeginTransaction())
@@ -97,12 +97,12 @@ namespace _5_erronka_1_Stock
 
                     // Ejecutar la consulta y obtener el resultado
                     var user = query.UniqueResult<Langilea>();
-
+                    int idUsuario= user.Id;
                     if (user != null)
                     {
                         // Usuario encontrado
                         MessageBox.Show("Inicio de sesión exitoso.");
-                        Menua m = new Menua(sessionFactory);
+                        Menua m = new Menua(sessionFactory, idUsuario);
                         m.Show();
 
                     }

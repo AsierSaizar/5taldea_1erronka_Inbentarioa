@@ -11,6 +11,7 @@ namespace _5_erronka_1_Stock.View.STOCK_VIEWS
     {
 
         private ISessionFactory sessionFactory;
+        private int idUsuario;
 
 
         public string selectedId { get; set; }
@@ -22,10 +23,11 @@ namespace _5_erronka_1_Stock.View.STOCK_VIEWS
         public string selectedMin { get; set; }
         public string selectedMax { get; set; }
 
-        public Stock_Edit(ISessionFactory sessionFactory)
+        public Stock_Edit(ISessionFactory sessionFactory, int idUsuario)
         {
             InitializeComponent();
             this.sessionFactory = sessionFactory ?? throw new ArgumentNullException(nameof(sessionFactory));
+            this.idUsuario = idUsuario;
         }
 
         private void Stock_Edit_Load(object sender, EventArgs e)
@@ -54,7 +56,7 @@ namespace _5_erronka_1_Stock.View.STOCK_VIEWS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Stock_View SV = new Stock_View(sessionFactory);
+            Stock_View SV = new Stock_View(sessionFactory, idUsuario);
             SV.Show();
             this.Close();
         }
@@ -87,7 +89,7 @@ namespace _5_erronka_1_Stock.View.STOCK_VIEWS
                 if (result == "true")
                 {
                     MessageBox.Show("Produktua ondo eraldatu da ");
-                    Stock_View SV = new Stock_View(sessionFactory);
+                    Stock_View SV = new Stock_View(sessionFactory, idUsuario);
                     SV.Show();
                     this.Close();
                 }
@@ -144,7 +146,7 @@ namespace _5_erronka_1_Stock.View.STOCK_VIEWS
 
 
                     produktua.updated_at = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                    produktua.updated_by = 2;
+                    produktua.updated_by = idUsuario;
 
                     // Guardar los cambios en la sesión
                     session.Update(produktua);

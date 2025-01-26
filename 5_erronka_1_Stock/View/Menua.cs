@@ -14,10 +14,12 @@ namespace _5_erronka_1_Stock
     public partial class Menua : Form
     {
         private ISessionFactory sessionFactory;
-        public Menua(ISessionFactory sessionFactory)
+        private int idUsuario;
+        public Menua(ISessionFactory sessionFactory, int idUsuario)
         {
             InitializeComponent();
             this.sessionFactory = sessionFactory ?? throw new ArgumentNullException(nameof(sessionFactory));
+            this.idUsuario = idUsuario;
 
         }
         protected override void OnLoad(EventArgs e)
@@ -32,14 +34,14 @@ namespace _5_erronka_1_Stock
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Stock_View s = new Stock_View(sessionFactory);
+            Stock_View s = new Stock_View(sessionFactory, idUsuario);
             s.Show();
             this.Close();
         }
 
         private void Platerak_Menu_Btn_Click(object sender, EventArgs e)
         {
-            Platerak_View p = new Platerak_View(sessionFactory);
+            Platerak_View p = new Platerak_View(sessionFactory, idUsuario);
             p.Show();
             this.Close();
         }
