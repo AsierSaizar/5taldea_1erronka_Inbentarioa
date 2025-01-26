@@ -1,4 +1,5 @@
 ﻿using NHibernate;
+using NHibernate.Mapping;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -165,14 +166,23 @@ namespace _5_erronka_1_Stock.View.STOCK_VIEWS
 
             if (dataGridView1.SelectedRows.Count > 0)
             {
+                int id = Convert.ToInt16(textBox1.Text);
                 int stockKant = Convert.ToInt16(textBox_Stock_Kant.Text);
                 int min = Convert.ToInt16((label2.Text));
                 int max = Convert.ToInt16((label3.Text));
 
                 if (max >= stockKant && stockKant >= min)
                 {
-                    MessageBox.Show("Ondo");
-                    
+                    String result = StockBete(id, stockKant);
+                    if (result == "true")
+                    {
+                        MessageBox.Show("Ondo eraldatu da");
+                        CargarDatos();
+                    }
+                    else
+                    {
+                        MessageBox.Show(result);
+                    }
                 }
                 else
                 {
@@ -183,6 +193,41 @@ namespace _5_erronka_1_Stock.View.STOCK_VIEWS
                 MessageBox.Show("Aukeratu erregistro bat");
             }
             
+        }
+
+        private String StockBete(int id, int stockKant)
+        {
+            using (var session = sessionFactory.OpenSession())
+            using (var transaction = session.BeginTransaction())
+            {
+                try
+                {
+                    // Recuperar el registro existente por ID
+                    var produktua = session.Query<Stock>().FirstOrDefault(f => f.Id == id);
+                    if (produktua == null)
+                    {
+                        return "Error: El producto con el ID especificado no existe.";
+                    }
+
+                    produktua.Stock_Kant = stockKant;
+
+                    produktua.updated_at = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                    produktua.updated_by = idUsuario;
+
+                    // Guardar los cambios en la sesión
+                    session.Update(produktua);
+                    transaction.Commit();  // Confirmar la transacción
+
+                    return "true";
+
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();  // Si hay un error, revierte la transacción
+
+                    return "Error: " + ex.Message;
+                }
+            }
         }
     }
 }

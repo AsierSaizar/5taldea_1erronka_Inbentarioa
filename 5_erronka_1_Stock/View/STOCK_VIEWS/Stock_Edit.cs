@@ -141,10 +141,6 @@ namespace _5_erronka_1_Stock.View.STOCK_VIEWS
                     produktua.Min = min;
                     produktua.Max = max;
 
-
-
-
-
                     produktua.updated_at = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                     produktua.updated_by = idUsuario;
 
