@@ -14,8 +14,13 @@
 		<property name="Mota" column="mota" type="string"/>
 		<property name="Platera_mota" column="platera_mota" type="string"/>
 		<property name="Prezioa" column="prezioa" type="int"/>
-		<property name="Kantidadea" column="kantidadea" type="int"/>
 		<property name="Menu" column="menu" type="boolean"/>
+		<property name="created_at" column="created_at" type="string"/>
+		<property name="created_by" column="created_by" type="int"/>
+		<property name="updated_at" column="updated_at" type="string"/>
+		<property name="updated_by" column="updated_by" type="int"/>
+		<property name="deleted_at" column="deleted_at" type="string"/>
+		<property name="deleted_by" column="deleted_by" type="int"/>
 
 
 	</class>

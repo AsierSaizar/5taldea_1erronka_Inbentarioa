@@ -7,9 +7,6 @@ using System.Threading.Tasks;
 namespace _5_erronka_1_Stock
 {
     internal class Stock
-
-
-
     {
         public virtual int Id { get; set; }
         public virtual string Izena { get; set; }

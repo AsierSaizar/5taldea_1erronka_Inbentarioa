@@ -53,7 +53,7 @@
             // 
             this.button1.AutoSize = true;
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(69)))), ((int)(((byte)(13)))));
-            this.button1.Location = new System.Drawing.Point(16, 15);
+            this.button1.Location = new System.Drawing.Point(12, 12);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 39);
