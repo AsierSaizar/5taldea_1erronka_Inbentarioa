@@ -14,7 +14,7 @@
 		<property name="Mota" column="mota" type="string"/>
 		<property name="Platera_mota" column="platera_mota" type="string"/>
 		<property name="Prezioa" column="prezioa" type="int"/>
-		<property name="Menu" column="menu" type="boolean"/>
+		<property name="Menu" column="menu" type="int"/>
 		<property name="created_at" column="created_at" type="string"/>
 		<property name="created_by" column="created_by" type="int"/>
 		<property name="updated_at" column="updated_at" type="string"/>

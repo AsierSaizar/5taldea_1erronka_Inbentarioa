@@ -1,4 +1,5 @@
-﻿using MySqlX.XDevAPI;
+﻿using _5_erronka_1_Stock.Kudeatzaileak;
+using MySqlX.XDevAPI;
 using NHibernate;
 using System;
 using System.Collections.Generic;
@@ -43,7 +44,7 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
                 try
                 {
                     // Consulta HQL para obtener todos los registros de la tabla 'almazena'
-                    string hql = "FROM Stock";
+                    string hql = "FROM Stock Where deleted_by = 0";
 
 
                     IQuery query = session.CreateQuery(hql);
@@ -101,5 +102,87 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
         {
 
         }
+
+            private void Stock_Sortu_Btn_Click(object sender, EventArgs e)
+            {
+                try
+                {
+                    String izena = textBox_izena.Text;
+                    String deskribapena = textBox_Deskribapena.Text;
+                    String mota = textBox_Mota.Text;
+                    String plateraMota = textBoxPlateraMota.Text;
+                    int prezioa = Convert.ToInt16(textBox_Prezioa.Text);
+
+                    int menu = Convert.ToInt16(textBoxMin.Text);
+                    if (menu == 0 || menu == 1)
+                    {
+                        String result = PlaterakKudeatzailea.PlateraSortu(sessionFactory, idUsuario, izena, deskribapena, mota, plateraMota, prezioa, menu);
+
+                        if (result == "true")
+                        {
+                            // Obtener el ID del plato recién creado (si es necesario)
+                            int platoId = PlaterakKudeatzailea.ObtenerIdDelPlatoCreado(sessionFactory, izena); // Implementa esta función si es necesario
+
+                            using (var session = sessionFactory.OpenSession())
+                            using (var transaction = session.BeginTransaction())
+                            {
+                                try
+                                {
+                                    // Recorrer los controles de ingredientes en el FlowLayoutPanel
+                                    foreach (IngredienteControl control in flowLayoutPanel1.Controls)
+                                    {
+                                        if (control.Cantidad > 0) // Solo si la cantidad es mayor que 0
+                                        {
+                                            int ingredienteId = control.IngredienteId; // ID del ingrediente
+                                            int cantidad = control.Cantidad; // Cantidad seleccionada
+
+                                            result = PlaterakKudeatzailea.GuardarRelacionPlatoIngrediente(sessionFactory, platoId, ingredienteId, cantidad);
+
+                                            if (!(result == "true"))
+                                            {
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    MessageBox.Show("Platera ondo sortu da ");
+                                    Platerak_View PV = new Platerak_View(sessionFactory, idUsuario);
+                                    PV.Show();
+                                    this.Close();
+                            }
+                            catch (Exception ex)
+                                {
+                                    MessageBox.Show("Error: " + ex.Message);
+                                }
+                            }
+                            
+
+
+
+
+                            
+                            
+                        }
+                        else
+                        {
+                            MessageBox.Show(result);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Menu atalean 1 edo 0 sartu");
+                    }
+
+
+
+                
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+
+            }
+
+        
     }
 }

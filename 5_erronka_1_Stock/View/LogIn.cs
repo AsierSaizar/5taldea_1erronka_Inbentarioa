@@ -83,7 +83,7 @@ namespace _5_erronka_1_Stock
             //string email = textBox_email.Text.Trim();
             //string pasahitza = textBox_pasahitza.Text.Trim();
             string email = "a";
-            string pasahitza = "123";
+            string pasahitza = "a";
             using (var session = sessionFactory.OpenSession())
             using (var transaction = session.BeginTransaction())
             {

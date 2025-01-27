@@ -33,11 +33,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox_Ezaugarriak = new System.Windows.Forms.TextBox();
+            this.textBox_Deskribapena = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox_Unitatea = new System.Windows.Forms.TextBox();
+            this.textBox_Prezioa = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxStockKant = new System.Windows.Forms.TextBox();
+            this.textBoxPlateraMota = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxMin = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -72,7 +72,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(931, 36);
+            this.label1.Location = new System.Drawing.Point(688, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(428, 80);
             this.label1.TabIndex = 19;
@@ -108,14 +108,14 @@
             this.label2.TabIndex = 48;
             this.label2.Text = "Izena";
             // 
-            // textBox_Ezaugarriak
+            // textBox_Deskribapena
             // 
-            this.textBox_Ezaugarriak.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox_Ezaugarriak.Location = new System.Drawing.Point(141, 112);
-            this.textBox_Ezaugarriak.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_Ezaugarriak.Name = "textBox_Ezaugarriak";
-            this.textBox_Ezaugarriak.Size = new System.Drawing.Size(395, 22);
-            this.textBox_Ezaugarriak.TabIndex = 47;
+            this.textBox_Deskribapena.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox_Deskribapena.Location = new System.Drawing.Point(141, 112);
+            this.textBox_Deskribapena.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_Deskribapena.Name = "textBox_Deskribapena";
+            this.textBox_Deskribapena.Size = new System.Drawing.Size(395, 22);
+            this.textBox_Deskribapena.TabIndex = 47;
             // 
             // label3
             // 
@@ -128,14 +128,14 @@
             this.label3.TabIndex = 49;
             this.label3.Text = "Mota";
             // 
-            // textBox_Unitatea
+            // textBox_Prezioa
             // 
-            this.textBox_Unitatea.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox_Unitatea.Location = new System.Drawing.Point(366, 219);
-            this.textBox_Unitatea.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_Unitatea.Name = "textBox_Unitatea";
-            this.textBox_Unitatea.Size = new System.Drawing.Size(169, 22);
-            this.textBox_Unitatea.TabIndex = 46;
+            this.textBox_Prezioa.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox_Prezioa.Location = new System.Drawing.Point(366, 219);
+            this.textBox_Prezioa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_Prezioa.Name = "textBox_Prezioa";
+            this.textBox_Prezioa.Size = new System.Drawing.Size(169, 22);
+            this.textBox_Prezioa.TabIndex = 46;
             // 
             // label4
             // 
@@ -148,14 +148,14 @@
             this.label4.TabIndex = 50;
             this.label4.Text = "Deskribapena";
             // 
-            // textBoxStockKant
+            // textBoxPlateraMota
             // 
-            this.textBoxStockKant.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxStockKant.Location = new System.Drawing.Point(141, 166);
-            this.textBoxStockKant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxStockKant.Name = "textBoxStockKant";
-            this.textBoxStockKant.Size = new System.Drawing.Size(396, 22);
-            this.textBoxStockKant.TabIndex = 45;
+            this.textBoxPlateraMota.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxPlateraMota.Location = new System.Drawing.Point(141, 166);
+            this.textBoxPlateraMota.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxPlateraMota.Name = "textBoxPlateraMota";
+            this.textBoxPlateraMota.Size = new System.Drawing.Size(396, 22);
+            this.textBoxPlateraMota.TabIndex = 45;
             // 
             // label6
             // 
@@ -229,11 +229,12 @@
             this.Stock_Sortu_Btn.TabIndex = 41;
             this.Stock_Sortu_Btn.Text = "Sortu";
             this.Stock_Sortu_Btn.UseVisualStyleBackColor = false;
+            this.Stock_Sortu_Btn.Click += new System.EventHandler(this.Stock_Sortu_Btn_Click);
             // 
             // splitContainer1
             // 
             this.splitContainer1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.splitContainer1.Location = new System.Drawing.Point(568, 282);
+            this.splitContainer1.Location = new System.Drawing.Point(325, 188);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -245,11 +246,11 @@
             this.splitContainer1.Panel1.Controls.Add(this.label7);
             this.splitContainer1.Panel1.Controls.Add(this.textBoxMin);
             this.splitContainer1.Panel1.Controls.Add(this.label6);
-            this.splitContainer1.Panel1.Controls.Add(this.textBoxStockKant);
+            this.splitContainer1.Panel1.Controls.Add(this.textBoxPlateraMota);
             this.splitContainer1.Panel1.Controls.Add(this.label4);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox_Unitatea);
+            this.splitContainer1.Panel1.Controls.Add(this.textBox_Prezioa);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox_Ezaugarriak);
+            this.splitContainer1.Panel1.Controls.Add(this.textBox_Deskribapena);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
@@ -266,10 +267,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(23)))), ((int)(((byte)(37)))));
-            this.ClientSize = new System.Drawing.Size(2410, 1331);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
+            this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Name = "Platerak_Create";
             this.Text = "Platerak_Create";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -292,11 +294,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox_Ezaugarriak;
+        private System.Windows.Forms.TextBox textBox_Deskribapena;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox_Unitatea;
+        private System.Windows.Forms.TextBox textBox_Prezioa;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxStockKant;
+        private System.Windows.Forms.TextBox textBoxPlateraMota;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxMin;
         private System.Windows.Forms.Label label7;
