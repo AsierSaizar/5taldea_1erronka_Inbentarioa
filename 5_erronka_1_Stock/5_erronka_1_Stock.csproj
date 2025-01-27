@@ -130,6 +130,12 @@
     <Compile Include="View\LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\PLATERAK_VIEWS\IngredienteControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\PLATERAK_VIEWS\IngredienteControl.Designer.cs">
+      <DependentUpon>IngredienteControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\PLATERAK_VIEWS\Platerak_Create.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Menua.resx">
       <DependentUpon>Menua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PLATERAK_VIEWS\IngredienteControl.resx">
+      <DependentUpon>IngredienteControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\PLATERAK_VIEWS\Platerak_Create.resx">
       <DependentUpon>Platerak_Create.cs</DependentUpon>

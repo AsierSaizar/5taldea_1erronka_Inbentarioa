@@ -1,4 +1,5 @@
-﻿using NHibernate;
+﻿using MySqlX.XDevAPI;
+using NHibernate;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,21 +47,27 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
 
 
                     IQuery query = session.CreateQuery(hql);
-
                     // Ejecuta la consulta y obtén los resultados como una lista
-                    IList<Stock> stockList = query.List<Stock>();
+                    IList<Stock> ingredientes = query.List<Stock>();
 
-                    // Asigna los datos al DataGridView
-                    dataGridView1.DataSource = stockList;
-
-                    transaction.Commit(); // Confirma la transacción
+                    foreach (var ingrediente in ingredientes)
+                    {
+                        var control = new IngredienteControl
+                        {
+                            IngredienteId = ingrediente.Id,
+                            Nombre = ingrediente.Izena,
+                            Cantidad = 0
+                        };
+                        control.Margin = new Padding(10); // Añade un margen de 10 píxeles alrededor de cada control
+                        flowLayoutPanel1.Controls.Add(control);
+                    }
                 }
                 catch (Exception ex)
                 {
-                    transaction.Rollback(); // Revierte la transacción en caso de error
-                    //MessageBox.Show("Error: " + ex.Message);
+                    MessageBox.Show("Error: " + ex.Message);
                 }
             }
+            
         }
 
         private void Platerak_Create_Load(object sender, EventArgs e)
@@ -73,6 +80,26 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             Platerak_View PV = new Platerak_View(sessionFactory, idUsuario);
             PV.Show();
             this.Close();
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
