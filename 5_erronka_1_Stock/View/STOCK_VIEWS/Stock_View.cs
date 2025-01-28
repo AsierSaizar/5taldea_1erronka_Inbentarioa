@@ -196,7 +196,7 @@ namespace _5_erronka_1_Stock
                 var selectedRow = dataGridView1.SelectedRows[0];
 
                 // Extraer datos de las columnas con manejo de valores null
-                int Id = Convert.ToInt16(selectedRow.Cells[0].Value?.ToString() ?? string.Empty);
+                int Id = Convert.ToInt16(selectedRow.Cells["Id"].Value?.ToString() ?? string.Empty);
                 var deleted_at = selectedRow.Cells[12].Value?.ToString() ?? string.Empty;
                 if (deleted_at=="")
                 {

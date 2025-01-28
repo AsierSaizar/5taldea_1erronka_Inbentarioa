@@ -1,4 +1,5 @@
-﻿using _5_erronka_1_Stock.View.PLATERAK_VIEWS;
+﻿using _5_erronka_1_Stock.Kudeatzaileak;
+using _5_erronka_1_Stock.View.PLATERAK_VIEWS;
 using _5_erronka_1_Stock.View.STOCK_VIEWS;
 using NHibernate;
 using System;
@@ -23,13 +24,14 @@ namespace _5_erronka_1_Stock
             InitializeComponent();
             this.sessionFactory = sessionFactory ?? throw new ArgumentNullException(nameof(sessionFactory));
             this.idUsuario = idUsuario;
+
+            CargarDatos();
         }
 
         protected override void OnLoad(EventArgs e)
         {
             this.Visible = false; // Oculta la ventana mientras carga
             base.OnLoad(e);
-            CargarDatos();
 
             // Realiza las configuraciones necesarias
             this.WindowState = FormWindowState.Maximized; // Asegúrate de que esté maximizado
@@ -54,6 +56,7 @@ namespace _5_erronka_1_Stock
 
                     // Asigna los datos al DataGridView
                     dataGridView1.DataSource = platerakList;
+                    dataGridView1.AutoGenerateColumns = false;
 
                     // Verifica si la columna existe y ocúltala
                     if (dataGridView1.Columns["PlateraStockak"] != null)
@@ -113,10 +116,11 @@ namespace _5_erronka_1_Stock
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
+
                 var selectedRow = dataGridView1.SelectedRows[0];
 
                 // Extraer datos de las columnas con manejo de valores null
-                var dataToPass_Id = selectedRow.Cells[0].Value?.ToString() ?? string.Empty;
+                var dataToPass_Id = selectedRow.Cells["Id"].Value?.ToString() ?? string.Empty;
                 var dataToPass_Izena = selectedRow.Cells[1].Value?.ToString() ?? string.Empty;
                 var dataToPass_Deskribapena = selectedRow.Cells[2].Value?.ToString() ?? string.Empty;
                 var dataToPass_PlateraMota = selectedRow.Cells[4].Value?.ToString() ?? string.Empty;
@@ -137,6 +141,73 @@ namespace _5_erronka_1_Stock
                 this.Close();
 
             }else
+            {
+                // No hay filas seleccionadas
+                MessageBox.Show("No hay ningún registro seleccionado.");
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                var selectedRow = dataGridView1.SelectedRows[0];
+
+                // Extraer datos de las columnas con manejo de valores null
+                int Id = Convert.ToInt16(selectedRow.Cells["Id"].Value?.ToString() ?? string.Empty);
+                var deleted_at = selectedRow.Cells[12].Value?.ToString() ?? string.Empty;
+                if (deleted_at == "")
+                {
+                    DialogResult dr = MessageBox.Show("Produktua ezabatu nahi duzu?",
+                      "Konfirmazioa ezabatzeko", MessageBoxButtons.YesNo);
+                    switch (dr)
+                    {
+                        case DialogResult.Yes:
+                            String result = PlaterakKudeatzailea.Platerak_Ezabatu(sessionFactory, idUsuario, Id);
+
+                            if (result == "true")
+                            {
+                                MessageBox.Show("Produktua ondo ezabatu da ");
+                                CargarDatos();
+                            }
+                            else
+                            {
+                                MessageBox.Show(result);
+                            }
+                            break;
+                        case DialogResult.No:
+
+                            break;
+                    }
+                }
+                else
+                {
+                    DialogResult dr = MessageBox.Show("Produktua ezabatuta dago iada\nProduktua berreskuratu nahi duzu?",
+                      "Konfirmazioa berreskuratzeko", MessageBoxButtons.YesNo);
+                    switch (dr)
+                    {
+                        case DialogResult.Yes:
+                            String result = PlaterakKudeatzailea.Platerak_Berreskuratu(sessionFactory, idUsuario, Id);
+
+                            if (result == "true")
+                            {
+                                MessageBox.Show("Produktua ondo berreskuratu da ");
+                                CargarDatos();
+                            }
+                            else
+                            {
+                                MessageBox.Show(result);
+                            }
+                            break;
+                        case DialogResult.No:
+
+                            break;
+                    }
+                }
+
+
+            }
+            else
             {
                 // No hay filas seleccionadas
                 MessageBox.Show("No hay ningún registro seleccionado.");

@@ -166,9 +166,10 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(617, 289);
+            this.flowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(778, 289);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(618, 681);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(304, 681);
             this.flowLayoutPanel1.TabIndex = 69;
             // 
             // Platerak_Osagaiak

@@ -49,7 +49,7 @@ namespace _5_erronka_1_Stock.Kudeatzaileak
             }
         }
 
-
+        
 
         internal static Platerak PlateraSortu(ISessionFactory sessionFactory, int idUsuario, string izena, string deskribapena, string mota, string plateraMota, int prezioa, int menu)
         {
@@ -78,6 +78,70 @@ namespace _5_erronka_1_Stock.Kudeatzaileak
                 {
                     transaction.Rollback();
                     return null;
+                }
+            }
+        }
+
+        internal static string Platerak_Berreskuratu(ISessionFactory sessionFactory, int idUsuario, int id)
+        {
+            using (var session = sessionFactory.OpenSession())
+            using (var transaction = session.BeginTransaction())
+            {
+                try
+                {
+                    // Recuperar el registro existente por ID
+                    var platera = session.Query<Platerak>().FirstOrDefault(f => f.Id == id);
+                    if (platera == null)
+                    {
+                        return "Error: El Plato con el ID especificado no existe.";
+                    }
+
+                    platera.deleted_at = "";
+                    platera.deleted_by = 0;
+
+                    session.Update(platera);
+                    transaction.Commit();  // Confirmar la transacción
+
+                    return "true";
+
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();  // Si hay un error, revierte la transacción
+
+                    return "Error: " + ex.Message;
+                }
+            }
+        }
+
+        internal static string Platerak_Ezabatu(ISessionFactory sessionFactory, int idUsuario, int id)
+        {
+            using (var session = sessionFactory.OpenSession())
+            using (var transaction = session.BeginTransaction())
+            {
+                try
+                {
+                    // Recuperar el registro existente por ID
+                    var platera = session.Query<Platerak>().FirstOrDefault(f => f.Id == id);
+                    if (platera == null)
+                    {
+                        return "Error: El Plato con el ID especificado no existe.";
+                    }
+
+                    platera.deleted_at = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                    platera.deleted_by = idUsuario;
+
+                    session.Update(platera);
+                    transaction.Commit();  // Confirmar la transacción
+
+                    return "true";
+
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();  // Si hay un error, revierte la transacción
+
+                    return "Error: " + ex.Message;
                 }
             }
         }
