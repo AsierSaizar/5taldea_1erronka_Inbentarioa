@@ -255,6 +255,8 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             "Bigarren_Platera",
             "Postrea",
             "Edaria"});
+            this.comboBox1.SelectedIndex = 0; 
+
             this.comboBox1.Location = new System.Drawing.Point(366, 159);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(172, 24);
@@ -268,6 +270,8 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             this.comboBox2.Items.AddRange(new object[] {
             "1",
             "0"});
+
+            this.comboBox2.SelectedIndex = 0;
             this.comboBox2.Location = new System.Drawing.Point(141, 219);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(172, 24);
