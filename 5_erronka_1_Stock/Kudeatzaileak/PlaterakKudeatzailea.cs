@@ -19,18 +19,27 @@ namespace _5_erronka_1_Stock.Kudeatzaileak
             {
                 try
                 {
-                    PlateraStock platera_stock = new PlateraStock
-                    {
-                        PlateraId = platoId,
-                        StockId = ingredienteId,
-                        Kantitatea = cantidad
+                    // Obtener las instancias de Platerak y Stock
+                    var plato = session.Get<Platerak>(platoId);
+                    var ingrediente = session.Get<Stock>(ingredienteId);
 
+                    if (plato == null || ingrediente == null)
+                    {
+                        return "Error: El plato o ingrediente no existe";
+                    }
+
+                    // Crear la relación
+                    PlateraStock plateraStock = new PlateraStock
+                    {
+                        Platera = plato,
+                        Almazena = ingrediente,
+                        Kantitatea = cantidad
                     };
-                    session.Save(platera_stock);
-                    transaction.Commit();  
+
+                    session.Save(plateraStock);
+                    transaction.Commit();
 
                     return "true";
-
                 }
                 catch (Exception ex)
                 {
@@ -40,32 +49,16 @@ namespace _5_erronka_1_Stock.Kudeatzaileak
             }
         }
 
-        internal static int ObtenerIdDelPlatoCreado(ISessionFactory sessionFactory, string izena)
-        {
-            using (var session = sessionFactory.OpenSession())
-            {
-                // Buscar el plato por nombre (o cualquier otro campo único)
-                var plato = session.Query<Platerak>().FirstOrDefault(p => p.Izena == izena);
 
-                if (plato != null)
-                {
-                    return plato.Id; // Devolver el ID del plato
-                }
-                else
-                {
-                    throw new Exception("Plato no encontrado.");
-                }
-            }
-        }
 
-        internal static string PlateraSortu(ISessionFactory sessionFactory, int idUsuario, string izena, string deskribapena, string mota, string plateraMota, int prezioa, int menu)
+        internal static Platerak PlateraSortu(ISessionFactory sessionFactory, int idUsuario, string izena, string deskribapena, string mota, string plateraMota, int prezioa, int menu)
         {
             using (var session = sessionFactory.OpenSession())
             using (var transaction = session.BeginTransaction())
             {
                 try
                 {
-                    Platerak plateraFinal = new Platerak
+                    var platera = new Platerak
                     {
                         Izena = izena,
                         Deskribapena = deskribapena,
@@ -73,24 +66,21 @@ namespace _5_erronka_1_Stock.Kudeatzaileak
                         Platera_mota = plateraMota,
                         Prezioa = prezioa,
                         Menu = menu,
-                        created_at = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
-                        created_by = idUsuario
-
+                        created_by = idUsuario,
+                        created_at = DateTime.Now.ToString()
                     };
-                    session.Save(plateraFinal);
-                    transaction.Commit();  // Asegúrate de confirmar la transacción
-                    return "true";
 
-
+                    session.Save(platera);
+                    transaction.Commit();
+                    return platera;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    transaction.Rollback();  // Si hay un error, revierte la transacción
-                    
-
-                    return "Error: " + ex.Message;
+                    transaction.Rollback();
+                    return null;
                 }
             }
         }
+
     }
 }

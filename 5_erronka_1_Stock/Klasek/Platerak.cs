@@ -15,15 +15,15 @@ namespace _5_erronka_1_Stock
         public virtual string Platera_mota { get; set; }
         public virtual int Prezioa { get; set; }
         public virtual int Menu { get; set; }
-        public virtual String created_at { get; set; }
+        public virtual string created_at { get; set; }
         public virtual int created_by { get; set; }
-        public virtual String updated_at { get; set; }
+        public virtual string updated_at { get; set; }
         public virtual int updated_by { get; set; }
-        public virtual String deleted_at { get; set; }
+        public virtual string deleted_at { get; set; }
         public virtual int deleted_by { get; set; }
 
-        
-        
+        public virtual IList<PlateraStock> PlateraStockak { get; set; } = new List<PlateraStock>();
     }
+
 
 }

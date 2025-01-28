@@ -8,12 +8,9 @@
 		<id name="Id" column="id" type="int">
 			<generator class="identity" />
 		</id>
-		<!-- Los nombres de la propiedades deben de coincidir con los nombres de tu tabla de la base de datos en la propiedad column -->
-		<property name="PlateraId" column="platera_id" type="int"/>
-		<property name="StockId" column="almazena_id" type="int"/>
-		<property name="Kantitatea" column="kantitatea" type="int"/>
-
-
+		<many-to-one name="Platera" class="Platerak" column="platera_id" not-null="true" />
+		<many-to-one name="Almazena" class="Stock" column="almazena_id" not-null="true" />
+		<property name="Kantitatea" column="kantitatea" type="int" />
 	</class>
 
 </hibernate-mapping>

@@ -58,13 +58,19 @@ namespace _5_erronka_1_Stock
 
                     // Asigna los datos al DataGridView
                     dataGridView1.DataSource = stockList;
+                    // Verifica si la columna existe y ocúltala
+                    if (dataGridView1.Columns["PlateraStockak"] != null)
+                    {
+                        dataGridView1.Columns["PlateraStockak"].Visible = false;
+                    }
+
 
                     transaction.Commit(); // Confirma la transacción
                 }
                 catch (Exception ex)
                 {
                     transaction.Rollback(); // Revierte la transacción en caso de error
-                    //MessageBox.Show("Error: " + ex.Message);
+                    MessageBox.Show("Error: " + ex.Message);
                 }
             }
         }
@@ -149,7 +155,7 @@ namespace _5_erronka_1_Stock
                 var selectedRow = dataGridView1.SelectedRows[0];
 
                 // Extraer datos de las columnas con manejo de valores null
-                var dataToPass_Id = selectedRow.Cells[0].Value?.ToString() ?? string.Empty;
+                string dataToPass_Id = selectedRow.Cells[0].Value?.ToString() ?? string.Empty;
                 var dataToPass_Izena = selectedRow.Cells[1].Value?.ToString() ?? string.Empty;
                 var dataToPass_Mota = selectedRow.Cells[2].Value?.ToString() ?? string.Empty;
                 var dataToPass_Ezaugarriak = selectedRow.Cells[3].Value?.ToString() ?? string.Empty;

@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="5_erronka_1_Stock.exe" size="355808">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="5_erronka_1_Stock.exe" size="356320">
       <assemblyIdentity name="5_erronka_1_Stock" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fWkFpTzdpP7vYcNnEuZGAuCTWXVv44UcECRsFCEY12s=</dsig:DigestValue>
+        <dsig:DigestValue>bhF94MUiQlOyepBLNZ2YTvA1xUetBI7HkmBpvwR+rJw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -305,13 +305,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="5_erronka_1_Stock.exe.config" size="1884">
+  <file name="5_erronka_1_Stock.exe.config" size="1875">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>HPdBHpvol8aZX9ssw8lwSdBqzFzo1wcTcWC4BvGN2es=</dsig:DigestValue>
+      <dsig:DigestValue>SSWOH52Lx+CNOxCvJ27ArOU5lKkoT8z6w2H7eqJwAU8=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

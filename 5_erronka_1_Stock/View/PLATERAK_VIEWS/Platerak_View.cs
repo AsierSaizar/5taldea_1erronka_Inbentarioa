@@ -55,6 +55,12 @@ namespace _5_erronka_1_Stock
                     // Asigna los datos al DataGridView
                     dataGridView1.DataSource = platerakList;
 
+                    // Verifica si la columna existe y ocúltala
+                    if (dataGridView1.Columns["PlateraStockak"] != null)
+                    {
+                        dataGridView1.Columns["PlateraStockak"].Visible = false;
+                    }
+
                     transaction.Commit(); // Confirma la transacción
                 }
                 catch (Exception ex)
