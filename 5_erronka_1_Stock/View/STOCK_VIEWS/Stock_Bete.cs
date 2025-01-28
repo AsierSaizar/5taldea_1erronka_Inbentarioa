@@ -1,4 +1,5 @@
-﻿using NHibernate;
+﻿using _5_erronka_1_Stock.Kudeatzaileak;
+using NHibernate;
 using NHibernate.Mapping;
 using System;
 using System.Collections.Generic;
@@ -173,7 +174,7 @@ namespace _5_erronka_1_Stock.View.STOCK_VIEWS
 
                 if (max >= stockKant && stockKant >= min)
                 {
-                    String result = StockBete(id, stockKant);
+                    String result = StockKudeatzailea.StockBete(sessionFactory, idUsuario, id, stockKant);
                     if (result == "true")
                     {
                         MessageBox.Show("Ondo eraldatu da");
@@ -195,39 +196,6 @@ namespace _5_erronka_1_Stock.View.STOCK_VIEWS
             
         }
 
-        private String StockBete(int id, int stockKant)
-        {
-            using (var session = sessionFactory.OpenSession())
-            using (var transaction = session.BeginTransaction())
-            {
-                try
-                {
-                    // Recuperar el registro existente por ID
-                    var produktua = session.Query<Stock>().FirstOrDefault(f => f.Id == id);
-                    if (produktua == null)
-                    {
-                        return "Error: El producto con el ID especificado no existe.";
-                    }
-
-                    produktua.Stock_Kant = stockKant;
-
-                    produktua.updated_at = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                    produktua.updated_by = idUsuario;
-
-                    // Guardar los cambios en la sesión
-                    session.Update(produktua);
-                    transaction.Commit();  // Confirmar la transacción
-
-                    return "true";
-
-                }
-                catch (Exception ex)
-                {
-                    transaction.Rollback();  // Si hay un error, revierte la transacción
-
-                    return "Error: " + ex.Message;
-                }
-            }
-        }
+        
     }
 }

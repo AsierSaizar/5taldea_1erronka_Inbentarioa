@@ -19,7 +19,10 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             get { return lblNombre.Text; }
             set { lblNombre.Text = value; }
         }
-        public int Cantidad { get; set; } = 0; // Cantidad seleccionada
+        public int Cantidad {
+            get { return Convert.ToInt16(lblCantidad.Text); }
+            set { lblCantidad.Text = value.ToString(); } 
+        }
 
         public IngredienteControl()
         {

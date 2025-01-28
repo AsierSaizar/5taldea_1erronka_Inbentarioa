@@ -1,4 +1,5 @@
-﻿using _5_erronka_1_Stock.View.STOCK_VIEWS;
+﻿using _5_erronka_1_Stock.Kudeatzaileak;
+using _5_erronka_1_Stock.View.STOCK_VIEWS;
 using NHibernate;
 using NHibernate.Mapping;
 using Org.BouncyCastle.Asn1.Cms;
@@ -197,15 +198,15 @@ namespace _5_erronka_1_Stock
 
                 // Extraer datos de las columnas con manejo de valores null
                 int Id = Convert.ToInt16(selectedRow.Cells["Id"].Value?.ToString() ?? string.Empty);
-                var deleted_at = selectedRow.Cells[12].Value?.ToString() ?? string.Empty;
-                if (deleted_at=="")
+                var deleted_by = selectedRow.Cells["deleted_by"].Value?.ToString() ?? string.Empty;
+                if (deleted_by == "0")
                 {
                     DialogResult dr = MessageBox.Show("Produktua ezabatu nahi duzu?",
                       "Konfirmazioa ezabatzeko", MessageBoxButtons.YesNo);
                     switch (dr)
                     {
                         case DialogResult.Yes:
-                            String result = Stock_Ezabatu(Id);
+                            String result = StockKudeatzailea.Stock_Ezabatu(sessionFactory, idUsuario, Id);
 
                             if (result == "true")
                             {
@@ -229,7 +230,7 @@ namespace _5_erronka_1_Stock
                     switch (dr)
                     {
                         case DialogResult.Yes:
-                            String result = Stock_Berreskuratu(Id);
+                            String result = StockKudeatzailea.Stock_Berreskuratu(sessionFactory, idUsuario, Id);
 
                             if (result == "true")
                             {
@@ -256,69 +257,9 @@ namespace _5_erronka_1_Stock
             }
         }
 
-        private string Stock_Berreskuratu(int id)
-        {
-            using (var session = sessionFactory.OpenSession())
-            using (var transaction = session.BeginTransaction())
-            {
-                try
-                {
-                    // Recuperar el registro existente por ID
-                    var produktua = session.Query<Stock>().FirstOrDefault(f => f.Id == id);
-                    if (produktua == null)
-                    {
-                        return "Error: El producto con el ID especificado no existe.";
-                    }
+        
 
-                    produktua.deleted_at = "";
-                    produktua.deleted_by = 0;
-
-                    session.Update(produktua);
-                    transaction.Commit();  // Confirmar la transacción
-
-                    return "true";
-
-                }
-                catch (Exception ex)
-                {
-                    transaction.Rollback();  // Si hay un error, revierte la transacción
-
-                    return "Error: " + ex.Message;
-                }
-            }
-        }
-
-        private string Stock_Ezabatu(int id)
-        {
-            using (var session = sessionFactory.OpenSession())
-            using (var transaction = session.BeginTransaction())
-            {
-                try
-                {
-                    // Recuperar el registro existente por ID
-                    var produktua = session.Query<Stock>().FirstOrDefault(f => f.Id == id);
-                    if (produktua == null)
-                    {
-                        return "Error: El producto con el ID especificado no existe.";
-                    }
-
-                    produktua.deleted_at = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                    produktua.deleted_by = idUsuario;
-
-                    session.Update(produktua);
-                    transaction.Commit();  // Confirmar la transacción
-
-                    return "true";
-
-                }
-                catch (Exception ex)
-                {
-                    transaction.Rollback();  // Si hay un error, revierte la transacción
-
-                    return "Error: " + ex.Message;
-                }
-            }
-        }
+        
 
         private void button7_Click(object sender, EventArgs e)
         {

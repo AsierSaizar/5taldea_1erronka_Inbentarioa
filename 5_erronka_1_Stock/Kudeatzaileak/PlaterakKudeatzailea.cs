@@ -1,11 +1,8 @@
-﻿using _5_erronka_1_Stock;
+﻿
 using NHibernate;
-using NHibernate.Mapping;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
 
 namespace _5_erronka_1_Stock.Kudeatzaileak
 {
@@ -146,5 +143,6 @@ namespace _5_erronka_1_Stock.Kudeatzaileak
             }
         }
 
+        
     }
 }

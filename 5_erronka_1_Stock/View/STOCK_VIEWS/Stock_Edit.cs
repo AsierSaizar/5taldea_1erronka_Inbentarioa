@@ -84,7 +84,7 @@ namespace _5_erronka_1_Stock.View.STOCK_VIEWS
                 int max = Convert.ToInt16(textBox_Max.Text);
 
                 
-                String result = Stock_Eraldatu(id, izena, mota, ezaugarriak, stock_Kant, unitatea, min, max);
+                String result = StockKudeatzailea.Stock_Eraldatu(sessionFactory, idUsuario, id, izena, mota, ezaugarriak, stock_Kant, unitatea, min, max);
                
                 if (result == "true")
                 {
@@ -105,60 +105,7 @@ namespace _5_erronka_1_Stock.View.STOCK_VIEWS
             }
         }
 
-        private String Stock_Eraldatu(int id, string izena, string mota, string ezaugarriak, int stock_Kant, string unitatea, int min, int max)
-        {
-            using (var session = sessionFactory.OpenSession())
-            using (var transaction = session.BeginTransaction())
-            {
-                try
-                {
-                    // Recuperar el registro existente por ID
-                    var produktua = session.Query<Stock>().FirstOrDefault(f => f.Id == id);
-                    if (produktua == null)
-                    {
-                        MessageBox.Show($"El producto con ID {id} no existe en la base de datos.");
-                        return "Error: El producto con el ID especificado no existe.";
-                    }
-
-
-
-                    // Actualizar solo los campos relevantes
-                    if (!string.IsNullOrEmpty(izena)) produktua.Izena = izena;
-
-                    produktua.Mota = mota;
-                    produktua.Ezaugarriak = ezaugarriak;
-                    if (stock_Kant <= 0 || string.IsNullOrEmpty(unitatea) || min <= 0 || max <= 0)
-                    {
-                        transaction.Rollback();
-                        if (stock_Kant <= 0) return "Stock kantitatea ezinda null edo 0 izan\nEz da eraldatu";
-                        if (string.IsNullOrEmpty(unitatea)) return "Unitatea ezinda null izan\nEz da eraldatu";
-                        if (min <= 0) return "Minimoa ezinda null edo 0 izan\nEz da eraldatu";
-                        if (max <= 0) return "Maximoa ezinda null edo 0 izan\nEz da eraldatu";
-                    }
-
-                    produktua.Stock_Kant = stock_Kant;
-                    produktua.Unitatea = unitatea;
-                    produktua.Min = min;
-                    produktua.Max = max;
-
-                    produktua.updated_at = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                    produktua.updated_by = idUsuario;
-
-                    // Guardar los cambios en la sesión
-                    session.Update(produktua);
-                    transaction.Commit();  // Confirmar la transacción
-
-                    return "true";
-
-                }
-                catch (Exception ex)
-                {
-                    transaction.Rollback();  // Si hay un error, revierte la transacción
-
-                    return "Error: " + ex.Message;
-                }
-            }
-        }
+        
 
 
     }

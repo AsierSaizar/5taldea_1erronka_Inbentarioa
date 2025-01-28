@@ -1,4 +1,5 @@
 ﻿
+using _5_erronka_1_Stock.Kudeatzaileak;
 using NHibernate;
 using System;
 using System.Windows.Forms;
@@ -77,7 +78,7 @@ namespace _5_erronka_1_Stock.View.STOCK_VIEWS
                 int min = Convert.ToInt16(textBoxMin.Text);
                 int max = Convert.ToInt16(textBoxMax.Text);
 
-                String result = Stock_Sortu(izena, mota, ezaugarriak, stock_Kant, unitatea, min, max);
+                String result = StockKudeatzailea.Stock_Sortu(sessionFactory, idUsuario, izena, mota, ezaugarriak, stock_Kant, unitatea, min, max);
                 if (result == "true")
                 {
                     MessageBox.Show("Produktua ondo sortu da ");
@@ -106,41 +107,7 @@ namespace _5_erronka_1_Stock.View.STOCK_VIEWS
 
         }
 
-        private String Stock_Sortu(string izena, string mota, string ezaugarriak, int stock_Kant, string unitatea, int min, int max)
-        {
-            using (var session = sessionFactory.OpenSession())
-            using (var transaction = session.BeginTransaction())
-            {
-                try
-                {
-                    Stock produktua = new Stock
-                    {
-                        Izena = izena,
-                        Mota = mota,
-                        Ezaugarriak = ezaugarriak,
-                        Stock_Kant = stock_Kant,
-                        Unitatea = unitatea,
-                        Min = min,
-                        Max = max,
-                        created_at = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
-                        created_by = idUsuario
-
-                    };
-                    session.Save(produktua);
-                    transaction.Commit();  // Asegúrate de confirmar la transacción
-                    return "true";
-
-
-                }
-                catch (Exception ex)
-                {
-                    transaction.Rollback();  // Si hay un error, revierte la transacción
-                    MessageBox.Show("Error: " + ex.Message);
-
-                    return "Error: " + ex.Message;
-                }
-            }
-        }
+        
 
         private void Stock_Create_Load(object sender, EventArgs e)
         {

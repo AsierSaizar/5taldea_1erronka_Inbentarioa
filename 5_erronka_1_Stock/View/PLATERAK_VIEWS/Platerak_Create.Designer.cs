@@ -40,7 +40,6 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             this.textBox_Prezioa = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBoxMin = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox_Mota = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -48,6 +47,7 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             this.Stock_Sortu_Btn = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -161,15 +161,6 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             this.label6.TabIndex = 51;
             this.label6.Text = "Platera Mota";
             // 
-            // textBoxMin
-            // 
-            this.textBoxMin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxMin.Location = new System.Drawing.Point(141, 219);
-            this.textBoxMin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxMin.Name = "textBoxMin";
-            this.textBoxMin.Size = new System.Drawing.Size(169, 22);
-            this.textBoxMin.TabIndex = 43;
-            // 
             // label7
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -232,13 +223,13 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.comboBox2);
             this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
             this.splitContainer1.Panel1.Controls.Add(this.Stock_Sortu_Btn);
             this.splitContainer1.Panel1.Controls.Add(this.textBox_izena);
             this.splitContainer1.Panel1.Controls.Add(this.label8);
             this.splitContainer1.Panel1.Controls.Add(this.textBox_Mota);
             this.splitContainer1.Panel1.Controls.Add(this.label7);
-            this.splitContainer1.Panel1.Controls.Add(this.textBoxMin);
             this.splitContainer1.Panel1.Controls.Add(this.label6);
             this.splitContainer1.Panel1.Controls.Add(this.label4);
             this.splitContainer1.Panel1.Controls.Add(this.textBox_Prezioa);
@@ -267,10 +258,20 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             this.comboBox1.Location = new System.Drawing.Point(366, 159);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(172, 24);
-
-            this.comboBox1.SelectedIndex = 0; // "Lehen platera"
             this.comboBox1.TabIndex = 57;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "1",
+            "0"});
+            this.comboBox2.Location = new System.Drawing.Point(141, 219);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(172, 24);
+            this.comboBox2.TabIndex = 58;
             // 
             // Platerak_Create
             // 
@@ -309,7 +310,6 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
         private System.Windows.Forms.TextBox textBox_Prezioa;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBoxMin;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox_Mota;
         private System.Windows.Forms.Label label8;
@@ -317,5 +317,6 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
         private System.Windows.Forms.Button Stock_Sortu_Btn;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private ComboBox comboBox2;
     }
 }

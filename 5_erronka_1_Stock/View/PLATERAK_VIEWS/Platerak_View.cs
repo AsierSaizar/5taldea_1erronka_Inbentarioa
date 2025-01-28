@@ -155,8 +155,8 @@ namespace _5_erronka_1_Stock
 
                 // Extraer datos de las columnas con manejo de valores null
                 int Id = Convert.ToInt16(selectedRow.Cells["Id"].Value?.ToString() ?? string.Empty);
-                var deleted_at = selectedRow.Cells[12].Value?.ToString() ?? string.Empty;
-                if (deleted_at == "")
+                var deleted_by = selectedRow.Cells["deleted_by"].Value?.ToString() ?? string.Empty;
+                if (deleted_by == "0")
                 {
                     DialogResult dr = MessageBox.Show("Produktua ezabatu nahi duzu?",
                       "Konfirmazioa ezabatzeko", MessageBoxButtons.YesNo);

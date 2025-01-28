@@ -10,7 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using NHibernate.Cfg;
-
+using _5_erronka_1_Stock.Kudeatzaileak;
+using System.Transactions;
 
 namespace _5_erronka_1_Stock
 {
@@ -84,41 +85,15 @@ namespace _5_erronka_1_Stock
             //string pasahitza = textBox_pasahitza.Text.Trim();
             string email = "a";
             string pasahitza = "a";
-            using (var session = sessionFactory.OpenSession())
-            using (var transaction = session.BeginTransaction())
+            int idUsuario = LangileaKudeatzailea.Login(sessionFactory, email, pasahitza);
+            if (idUsuario != 0)
             {
-                try
-                {
-                    // Crear la consulta HQL para buscar al usuario
-                    string hql = "FROM Langilea WHERE Emaila = :email AND Pasahitza = :pasahitza AND Nivel_permisos = 0";
-                    IQuery query = session.CreateQuery(hql);
-                    query.SetParameter("email", email);
-                    query.SetParameter("pasahitza", pasahitza);
-
-                    // Ejecutar la consulta y obtener el resultado
-                    var user = query.UniqueResult<Langilea>();
-                    int idUsuario= user.Id;
-                    if (user != null)
-                    {
-                        // Usuario encontrado
-                        MessageBox.Show("Inicio de sesión exitoso.");
-                        Menua m = new Menua(sessionFactory, idUsuario);
-                        m.Show();
-
-                    }
-                    else
-                    {
-                        // Usuario no encontrado
-                        MessageBox.Show("Correo electrónico o contraseña incorrectos.");
-                    }
-
-                    transaction.Commit();
-                }
-                catch (Exception ex)
-                {
-                    transaction.Rollback();
-                    MessageBox.Show("Error: " + ex.Message);
-                }
+                MessageBox.Show("Inicio de sesión exitoso.");
+                Menua m = new Menua(sessionFactory, idUsuario);
+                m.Show();
+            }else if (idUsuario == -0)
+            {
+                MessageBox.Show("Errore bat izanda saioa hastean");
             }
 
 

@@ -114,7 +114,7 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
                 String plateraMota = comboBox1.Text;
                 int prezioa = Convert.ToInt16(textBox_Prezioa.Text);
 
-                int menu = Convert.ToInt16(textBoxMin.Text);
+                int menu = Convert.ToInt16(comboBox2.Text);
                 if (menu == 0 || menu == 1)
                 {
                     var nuevoPlato = PlaterakKudeatzailea.PlateraSortu(sessionFactory, idUsuario, izena, deskribapena, mota, plateraMota, prezioa, menu);

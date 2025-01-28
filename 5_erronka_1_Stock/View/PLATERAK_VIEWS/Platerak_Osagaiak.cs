@@ -82,6 +82,9 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
                             Cantidad = ingrediente.Kantitatea
                         };
                         control.Margin = new Padding(10);
+                        control.btnRestar.Visible = false;
+                        control.btnSumar.Visible = false;
+
                         flowLayoutPanel1.Controls.Add(control);
                     }
                 }

@@ -4,9 +4,9 @@
     {
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Button btnRestar;
-        private System.Windows.Forms.Button btnSumar;
-        private System.Windows.Forms.Label lblCantidad;
+        public System.Windows.Forms.Button btnRestar;
+        public System.Windows.Forms.Button btnSumar;
+        public System.Windows.Forms.Label lblCantidad;
 
         protected override void Dispose(bool disposing)
         {
