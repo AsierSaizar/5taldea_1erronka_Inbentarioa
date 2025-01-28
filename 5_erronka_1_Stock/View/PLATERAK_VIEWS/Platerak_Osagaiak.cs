@@ -30,13 +30,14 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             InitializeComponent();
             this.sessionFactory = sessionFactory ?? throw new ArgumentNullException(nameof(sessionFactory));
             this.idUsuario = idUsuario;
+
+            
         }
 
         protected override void OnLoad(EventArgs e)
         {
             this.Visible = false; // Oculta la ventana mientras carga
             base.OnLoad(e);
-            CargarDatos();
             CargarTextBox();
 
             // Realiza las configuraciones necesarias
@@ -52,11 +53,43 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             textBox_Deskribapena.Text = selectedDeskribapena;
             textBox_Platera_mota.Text = selectedPlatera_mota;
             textBox_prezioa.Text = selectedPrezioa;
+
+            CargarDatos();
         }
 
         private void CargarDatos()
         {
-            
+            using (var session = sessionFactory.OpenSession())
+            using (var transaction = session.BeginTransaction())
+            {
+                try
+                {
+
+                    string hql = "FROM PlateraStock Where platera_id = :id";
+
+                    IQuery query = session.CreateQuery(hql);
+
+                    query.SetParameter("id", selectedId);
+
+                    IList<PlateraStock> ingredientes = query.List<PlateraStock>();
+
+                    foreach (var ingrediente in ingredientes)
+                    {
+                        var control = new IngredienteControl
+                        {
+                            IngredienteId = ingrediente.Id,
+                            Nombre = ingrediente.Almazena.Izena,
+                            Cantidad = ingrediente.Kantitatea
+                        };
+                        control.Margin = new Padding(10);
+                        flowLayoutPanel1.Controls.Add(control);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
         }
 
 
@@ -80,6 +113,11 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             Platerak_View PV = new Platerak_View(sessionFactory, idUsuario);
             PV.Show();
             this.Close();
+        }
+
+        private void textBox_Id_Storage_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

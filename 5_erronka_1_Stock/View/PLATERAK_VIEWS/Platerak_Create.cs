@@ -111,7 +111,7 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
                 String izena = textBox_izena.Text;
                 String deskribapena = textBox_Deskribapena.Text;
                 String mota = textBox_Mota.Text;
-                String plateraMota = textBoxPlateraMota.Text;
+                String plateraMota = comboBox1.Text;
                 int prezioa = Convert.ToInt16(textBox_Prezioa.Text);
 
                 int menu = Convert.ToInt16(textBoxMin.Text);
@@ -172,7 +172,14 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             }
         }
 
+        private void textBoxPlateraMota_TextChanged(object sender, EventArgs e)
+        {
 
+        }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

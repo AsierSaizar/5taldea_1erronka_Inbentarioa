@@ -1,4 +1,6 @@
-﻿namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
+﻿using System.Windows.Forms;
+
+namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
 {
     partial class Platerak_Create
     {
@@ -37,7 +39,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox_Prezioa = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxPlateraMota = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxMin = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -46,6 +47,7 @@
             this.textBox_izena = new System.Windows.Forms.TextBox();
             this.Stock_Sortu_Btn = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -102,7 +104,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(137, 35);
+            this.label2.Location = new System.Drawing.Point(138, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 16);
             this.label2.TabIndex = 48;
@@ -111,10 +113,10 @@
             // textBox_Deskribapena
             // 
             this.textBox_Deskribapena.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox_Deskribapena.Location = new System.Drawing.Point(141, 112);
+            this.textBox_Deskribapena.Location = new System.Drawing.Point(142, 159);
             this.textBox_Deskribapena.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_Deskribapena.Name = "textBox_Deskribapena";
-            this.textBox_Deskribapena.Size = new System.Drawing.Size(395, 22);
+            this.textBox_Deskribapena.Size = new System.Drawing.Size(169, 22);
             this.textBox_Deskribapena.TabIndex = 47;
             // 
             // label3
@@ -122,7 +124,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(363, 35);
+            this.label3.Location = new System.Drawing.Point(364, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 16);
             this.label3.TabIndex = 49;
@@ -142,27 +144,18 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(137, 93);
+            this.label4.Location = new System.Drawing.Point(138, 140);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 16);
             this.label4.TabIndex = 50;
             this.label4.Text = "Deskribapena";
-            // 
-            // textBoxPlateraMota
-            // 
-            this.textBoxPlateraMota.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxPlateraMota.Location = new System.Drawing.Point(141, 166);
-            this.textBoxPlateraMota.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxPlateraMota.Name = "textBoxPlateraMota";
-            this.textBoxPlateraMota.Size = new System.Drawing.Size(396, 22);
-            this.textBoxPlateraMota.TabIndex = 45;
             // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(137, 147);
+            this.label6.Location = new System.Drawing.Point(362, 140);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 16);
             this.label6.TabIndex = 51;
@@ -191,7 +184,7 @@
             // textBox_Mota
             // 
             this.textBox_Mota.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox_Mota.Location = new System.Drawing.Point(367, 53);
+            this.textBox_Mota.Location = new System.Drawing.Point(368, 100);
             this.textBox_Mota.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_Mota.Name = "textBox_Mota";
             this.textBox_Mota.Size = new System.Drawing.Size(169, 22);
@@ -211,7 +204,7 @@
             // textBox_izena
             // 
             this.textBox_izena.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox_izena.Location = new System.Drawing.Point(141, 53);
+            this.textBox_izena.Location = new System.Drawing.Point(142, 100);
             this.textBox_izena.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_izena.Name = "textBox_izena";
             this.textBox_izena.Size = new System.Drawing.Size(169, 22);
@@ -239,6 +232,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
             this.splitContainer1.Panel1.Controls.Add(this.Stock_Sortu_Btn);
             this.splitContainer1.Panel1.Controls.Add(this.textBox_izena);
             this.splitContainer1.Panel1.Controls.Add(this.label8);
@@ -246,7 +240,6 @@
             this.splitContainer1.Panel1.Controls.Add(this.label7);
             this.splitContainer1.Panel1.Controls.Add(this.textBoxMin);
             this.splitContainer1.Panel1.Controls.Add(this.label6);
-            this.splitContainer1.Panel1.Controls.Add(this.textBoxPlateraMota);
             this.splitContainer1.Panel1.Controls.Add(this.label4);
             this.splitContainer1.Panel1.Controls.Add(this.textBox_Prezioa);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
@@ -261,6 +254,23 @@
             this.splitContainer1.Size = new System.Drawing.Size(1403, 534);
             this.splitContainer1.SplitterDistance = 625;
             this.splitContainer1.TabIndex = 56;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Lehen_Platera",
+            "Bigarren_Platera",
+            "Postrea",
+            "Edaria"});
+            this.comboBox1.Location = new System.Drawing.Point(366, 159);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(172, 24);
+
+            this.comboBox1.SelectedIndex = 0; // "Lehen platera"
+            this.comboBox1.TabIndex = 57;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Platerak_Create
             // 
@@ -298,7 +308,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox_Prezioa;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxPlateraMota;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxMin;
         private System.Windows.Forms.Label label7;
@@ -307,5 +316,6 @@
         private System.Windows.Forms.TextBox textBox_izena;
         private System.Windows.Forms.Button Stock_Sortu_Btn;
         private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
