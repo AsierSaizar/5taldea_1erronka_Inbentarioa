@@ -24,10 +24,11 @@ namespace _5_erronka_1_Stock.Kudeatzaileak
 
                     // Ejecutar la consulta y obtener el resultado
                     var user = query.UniqueResult<Langilea>();
-                    int idUsuario = user.Id;
+                    
+                    
                     if (user != null)
                     {
-                        // Usuario encontrado
+                        int idUsuario = user.Id;
                         return idUsuario;
                         
                     }

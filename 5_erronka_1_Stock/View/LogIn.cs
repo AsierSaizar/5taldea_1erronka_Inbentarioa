@@ -91,7 +91,7 @@ namespace _5_erronka_1_Stock
                 m.Show();
             }else if (idUsuario == -0)
             {
-                MessageBox.Show("Errore bat izanda saioa hastean");
+                MessageBox.Show("Erabiltzailea edo pasahitza ez dira zuzenak");
             }
 
 
