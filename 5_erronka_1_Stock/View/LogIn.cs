@@ -80,11 +80,9 @@ namespace _5_erronka_1_Stock
             
 
 
-            // Obtener los valores del formulario
-            //string email = textBox_email.Text.Trim();
-            //string pasahitza = textBox_pasahitza.Text.Trim();
-            string email = "a";
-            string pasahitza = "a";
+            string email = textBox_email.Text.Trim();
+            string pasahitza = textBox_pasahitza.Text.Trim();
+
             int idUsuario = LangileaKudeatzailea.Login(sessionFactory, email, pasahitza);
             if (idUsuario != 0)
             {

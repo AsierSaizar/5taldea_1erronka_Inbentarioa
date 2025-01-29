@@ -229,7 +229,6 @@ namespace _5_erronka_1_Stock
             }
             else
             {
-                // No hay filas seleccionadas
                 MessageBox.Show("No hay ningún registro seleccionado.");
             }
         }
