@@ -213,5 +213,25 @@ namespace _5_erronka_1_Stock
                 MessageBox.Show("No hay ningún registro seleccionado.");
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                var selectedRow = dataGridView1.SelectedRows[0];
+
+                // Extraer datos de las columnas con manejo de valores null
+                int idPlatera = Convert.ToInt16(selectedRow.Cells["Id"].Value?.ToString() ?? string.Empty);
+
+                Platerak_Edit SE = new Platerak_Edit(sessionFactory, idUsuario, idPlatera);
+                SE.Show();
+                this.Close();
+            }
+            else
+            {
+                // No hay filas seleccionadas
+                MessageBox.Show("No hay ningún registro seleccionado.");
+            }
+        }
     }
 }

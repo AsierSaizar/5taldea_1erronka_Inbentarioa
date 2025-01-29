@@ -173,6 +173,12 @@
     <Compile Include="View\PLATERAK_VIEWS\Platerak_Create.Designer.cs">
       <DependentUpon>Platerak_Create.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\PLATERAK_VIEWS\Platerak_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PLATERAK_VIEWS\Platerak_Edit.Designer.cs">
+      <DependentUpon>Platerak_Edit.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\PLATERAK_VIEWS\Platerak_Osagaiak.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\PLATERAK_VIEWS\Platerak_Create.resx">
       <DependentUpon>Platerak_Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PLATERAK_VIEWS\Platerak_Edit.resx">
+      <DependentUpon>Platerak_Edit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\PLATERAK_VIEWS\Platerak_Osagaiak.resx">
       <DependentUpon>Platerak_Osagaiak.cs</DependentUpon>

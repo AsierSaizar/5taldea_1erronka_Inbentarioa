@@ -156,7 +156,7 @@ namespace _5_erronka_1_Stock
                 var selectedRow = dataGridView1.SelectedRows[0];
 
                 // Extraer datos de las columnas con manejo de valores null
-                string dataToPass_Id = selectedRow.Cells[0].Value?.ToString() ?? string.Empty;
+                string dataToPass_Id = selectedRow.Cells["Id"].Value?.ToString() ?? string.Empty;
                 var dataToPass_Izena = selectedRow.Cells[1].Value?.ToString() ?? string.Empty;
                 var dataToPass_Mota = selectedRow.Cells[2].Value?.ToString() ?? string.Empty;
                 var dataToPass_Ezaugarriak = selectedRow.Cells[3].Value?.ToString() ?? string.Empty;

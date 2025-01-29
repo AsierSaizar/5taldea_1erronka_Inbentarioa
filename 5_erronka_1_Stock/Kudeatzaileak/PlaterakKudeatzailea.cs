@@ -143,6 +143,80 @@ namespace _5_erronka_1_Stock.Kudeatzaileak
             }
         }
 
-        
+        internal static void PlateraEraldatu(ISessionFactory sessionFactory, int idUsuario, int idPlatera, string izena, string deskribapena, string mota, string plateraMota, int prezioa, int menu)
+        {
+            using (var session = sessionFactory.OpenSession())
+            using (var transaction = session.BeginTransaction())
+            {
+                try
+                {
+                    // Obtener el registro existente con el idPlatera
+                    var platera = session.Get<Platerak>(idPlatera);
+
+                    // Verificar si el registro existe
+                    if (platera != null)
+                    {
+                        // Actualizar los campos del registro
+                        platera.Izena = izena;
+                        platera.Deskribapena = deskribapena;
+                        platera.Mota = mota;
+                        platera.Platera_mota = plateraMota;
+                        platera.Prezioa = prezioa;
+                        platera.Menu = menu;
+                        platera.updated_by = idUsuario;
+                        platera.updated_at = DateTime.Now.ToString();
+
+                        // Guardar los cambios en la base de datos
+                        session.Update(platera);
+                        transaction.Commit();
+                    }
+                    else
+                    {
+                        // Si el registro no se encuentra, puedes manejar el error o lanzar una excepción
+                        throw new Exception("Platera no encontrado.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // En caso de error, realizar un rollback
+                    transaction.Rollback();
+                    // Aquí puedes manejar el error, por ejemplo, loguear el mensaje
+                    Console.WriteLine(ex.Message);
+                }
+            }
+        }
+
+        internal static void PlaterarenErlazioakEzabatu(ISessionFactory sessionFactory, int idPlatera)
+        {
+            using (var session = sessionFactory.OpenSession())
+            using (var transaction = session.BeginTransaction())
+            {
+                try
+                {
+                    // Obtener todos los registros de PlateraStock que estén relacionados con el idPlatera
+                    var plateraStocks = session.Query<PlateraStock>()
+                                               .Where(ps => ps.Platera.Id == idPlatera)
+                                               .ToList();
+
+                    // Eliminar todos los registros encontrados
+                    foreach (var plateraStock in plateraStocks)
+                    {
+                        session.Delete(plateraStock);
+                    }
+
+                    // Confirmar la transacción
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    // En caso de error, realizar rollback
+                    transaction.Rollback();
+                    // Manejar el error, por ejemplo, loguearlo
+                    Console.WriteLine(ex.Message);
+                }
+            }
+        }
+
+
     }
 }

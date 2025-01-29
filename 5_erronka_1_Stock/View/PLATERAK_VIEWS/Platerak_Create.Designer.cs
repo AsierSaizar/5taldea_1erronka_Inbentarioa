@@ -46,8 +46,8 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             this.textBox_izena = new System.Windows.Forms.TextBox();
             this.Stock_Sortu_Btn = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -59,7 +59,8 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             // 
             this.button1.AutoSize = true;
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(69)))), ((int)(((byte)(13)))));
-            this.button1.Location = new System.Drawing.Point(15, 15);
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(12, 12);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 39);
@@ -104,7 +105,7 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(138, 82);
+            this.label2.Location = new System.Drawing.Point(143, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 16);
             this.label2.TabIndex = 48;
@@ -113,7 +114,7 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             // textBox_Deskribapena
             // 
             this.textBox_Deskribapena.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox_Deskribapena.Location = new System.Drawing.Point(142, 159);
+            this.textBox_Deskribapena.Location = new System.Drawing.Point(142, 118);
             this.textBox_Deskribapena.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_Deskribapena.Name = "textBox_Deskribapena";
             this.textBox_Deskribapena.Size = new System.Drawing.Size(169, 22);
@@ -124,7 +125,7 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(364, 82);
+            this.label3.Location = new System.Drawing.Point(364, 41);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 16);
             this.label3.TabIndex = 49;
@@ -133,7 +134,7 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             // textBox_Prezioa
             // 
             this.textBox_Prezioa.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox_Prezioa.Location = new System.Drawing.Point(366, 219);
+            this.textBox_Prezioa.Location = new System.Drawing.Point(366, 178);
             this.textBox_Prezioa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_Prezioa.Name = "textBox_Prezioa";
             this.textBox_Prezioa.Size = new System.Drawing.Size(169, 22);
@@ -144,7 +145,7 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(138, 140);
+            this.label4.Location = new System.Drawing.Point(138, 99);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 16);
             this.label4.TabIndex = 50;
@@ -155,7 +156,7 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(362, 140);
+            this.label6.Location = new System.Drawing.Point(362, 99);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 16);
             this.label6.TabIndex = 51;
@@ -166,7 +167,7 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Location = new System.Drawing.Point(362, 200);
+            this.label7.Location = new System.Drawing.Point(362, 159);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 16);
             this.label7.TabIndex = 52;
@@ -175,7 +176,7 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             // textBox_Mota
             // 
             this.textBox_Mota.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox_Mota.Location = new System.Drawing.Point(368, 100);
+            this.textBox_Mota.Location = new System.Drawing.Point(368, 59);
             this.textBox_Mota.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_Mota.Name = "textBox_Mota";
             this.textBox_Mota.Size = new System.Drawing.Size(169, 22);
@@ -186,7 +187,7 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label8.Location = new System.Drawing.Point(137, 200);
+            this.label8.Location = new System.Drawing.Point(137, 159);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(40, 16);
             this.label8.TabIndex = 53;
@@ -195,7 +196,7 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             // textBox_izena
             // 
             this.textBox_izena.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox_izena.Location = new System.Drawing.Point(142, 100);
+            this.textBox_izena.Location = new System.Drawing.Point(142, 59);
             this.textBox_izena.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_izena.Name = "textBox_izena";
             this.textBox_izena.Size = new System.Drawing.Size(169, 22);
@@ -206,7 +207,7 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             this.Stock_Sortu_Btn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Stock_Sortu_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(69)))), ((int)(((byte)(13)))));
             this.Stock_Sortu_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Stock_Sortu_Btn.Location = new System.Drawing.Point(141, 291);
+            this.Stock_Sortu_Btn.Location = new System.Drawing.Point(141, 250);
             this.Stock_Sortu_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Stock_Sortu_Btn.Name = "Stock_Sortu_Btn";
             this.Stock_Sortu_Btn.Size = new System.Drawing.Size(396, 75);
@@ -218,7 +219,7 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             // splitContainer1
             // 
             this.splitContainer1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.splitContainer1.Location = new System.Drawing.Point(325, 188);
+            this.splitContainer1.Location = new System.Drawing.Point(317, 358);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -246,6 +247,18 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             this.splitContainer1.SplitterDistance = 625;
             this.splitContainer1.TabIndex = 56;
             // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "1",
+            "0"});
+            this.comboBox2.Location = new System.Drawing.Point(141, 178);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(172, 24);
+            this.comboBox2.TabIndex = 58;
+            // 
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -255,27 +268,11 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
             "Bigarren_Platera",
             "Postrea",
             "Edaria"});
-            this.comboBox1.SelectedIndex = 0; 
-
-            this.comboBox1.Location = new System.Drawing.Point(366, 159);
+            this.comboBox1.Location = new System.Drawing.Point(366, 118);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(172, 24);
             this.comboBox1.TabIndex = 57;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "1",
-            "0"});
-
-            this.comboBox2.SelectedIndex = 0;
-            this.comboBox2.Location = new System.Drawing.Point(141, 219);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(172, 24);
-            this.comboBox2.TabIndex = 58;
             // 
             // Platerak_Create
             // 

@@ -83,10 +83,11 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(1062, 134);
+            this.label6.Location = new System.Drawing.Point(1062, 284);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 16);
+            this.label6.Size = new System.Drawing.Size(70, 22);
             this.label6.TabIndex = 68;
             this.label6.Text = "Prezioa";
             // 
@@ -94,10 +95,11 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(722, 196);
+            this.label4.Location = new System.Drawing.Point(722, 355);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 16);
+            this.label4.Size = new System.Drawing.Size(121, 22);
             this.label4.TabIndex = 67;
             this.label4.Text = "Deskribapena";
             // 
@@ -105,10 +107,11 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(838, 134);
+            this.label3.Location = new System.Drawing.Point(838, 282);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 16);
+            this.label3.Size = new System.Drawing.Size(111, 22);
             this.label3.TabIndex = 66;
             this.label3.Text = "Platera Mota";
             // 
@@ -116,58 +119,63 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(613, 134);
+            this.label2.Location = new System.Drawing.Point(613, 278);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 16);
+            this.label2.Size = new System.Drawing.Size(52, 22);
             this.label2.TabIndex = 65;
             this.label2.Text = "Izena";
             // 
             // textBox_Deskribapena
             // 
             this.textBox_Deskribapena.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox_Deskribapena.Location = new System.Drawing.Point(726, 215);
+            this.textBox_Deskribapena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Deskribapena.Location = new System.Drawing.Point(726, 385);
             this.textBox_Deskribapena.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_Deskribapena.Name = "textBox_Deskribapena";
             this.textBox_Deskribapena.ReadOnly = true;
-            this.textBox_Deskribapena.Size = new System.Drawing.Size(395, 22);
+            this.textBox_Deskribapena.Size = new System.Drawing.Size(494, 28);
             this.textBox_Deskribapena.TabIndex = 64;
             this.textBox_Deskribapena.TextChanged += new System.EventHandler(this.textBox_Ezaugarriak_TextChanged);
             // 
             // textBox_prezioa
             // 
             this.textBox_prezioa.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox_prezioa.Location = new System.Drawing.Point(1066, 152);
+            this.textBox_prezioa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_prezioa.Location = new System.Drawing.Point(1066, 308);
             this.textBox_prezioa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_prezioa.Name = "textBox_prezioa";
             this.textBox_prezioa.ReadOnly = true;
-            this.textBox_prezioa.Size = new System.Drawing.Size(169, 22);
+            this.textBox_prezioa.Size = new System.Drawing.Size(211, 28);
             this.textBox_prezioa.TabIndex = 62;
             // 
             // textBox_Platera_mota
             // 
             this.textBox_Platera_mota.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox_Platera_mota.Location = new System.Drawing.Point(842, 152);
+            this.textBox_Platera_mota.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Platera_mota.Location = new System.Drawing.Point(842, 308);
             this.textBox_Platera_mota.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_Platera_mota.Name = "textBox_Platera_mota";
             this.textBox_Platera_mota.ReadOnly = true;
-            this.textBox_Platera_mota.Size = new System.Drawing.Size(169, 22);
+            this.textBox_Platera_mota.Size = new System.Drawing.Size(211, 28);
             this.textBox_Platera_mota.TabIndex = 59;
             // 
             // textBox_izena
             // 
             this.textBox_izena.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox_izena.Location = new System.Drawing.Point(617, 152);
+            this.textBox_izena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_izena.Location = new System.Drawing.Point(617, 308);
             this.textBox_izena.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_izena.Name = "textBox_izena";
             this.textBox_izena.ReadOnly = true;
-            this.textBox_izena.Size = new System.Drawing.Size(169, 22);
+            this.textBox_izena.Size = new System.Drawing.Size(211, 28);
             this.textBox_izena.TabIndex = 57;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(778, 289);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(777, 492);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(304, 681);
             this.flowLayoutPanel1.TabIndex = 69;

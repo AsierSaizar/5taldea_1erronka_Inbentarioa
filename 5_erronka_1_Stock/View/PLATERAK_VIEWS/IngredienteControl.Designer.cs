@@ -29,19 +29,20 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblNombre.Location = new System.Drawing.Point(10, 10);
+            this.lblNombre.Location = new System.Drawing.Point(9, 8);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(126, 16);
+            this.lblNombre.Size = new System.Drawing.Size(183, 25);
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Nombre Ingrediente";
             // 
             // btnRestar
             // 
             this.btnRestar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnRestar.Location = new System.Drawing.Point(175, 5);
+            this.btnRestar.Location = new System.Drawing.Point(203, 3);
             this.btnRestar.Name = "btnRestar";
-            this.btnRestar.Size = new System.Drawing.Size(30, 30);
+            this.btnRestar.Size = new System.Drawing.Size(39, 35);
             this.btnRestar.TabIndex = 1;
             this.btnRestar.Text = "-";
             this.btnRestar.UseVisualStyleBackColor = false;
@@ -50,9 +51,9 @@
             // btnSumar
             // 
             this.btnSumar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnSumar.Location = new System.Drawing.Point(255, 5);
+            this.btnSumar.Location = new System.Drawing.Point(285, 3);
             this.btnSumar.Name = "btnSumar";
-            this.btnSumar.Size = new System.Drawing.Size(30, 30);
+            this.btnSumar.Size = new System.Drawing.Size(34, 32);
             this.btnSumar.TabIndex = 2;
             this.btnSumar.Text = "+";
             this.btnSumar.UseVisualStyleBackColor = false;
@@ -63,11 +64,11 @@
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.Cursor = System.Windows.Forms.Cursors.No;
             this.lblCantidad.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCantidad.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblCantidad.Location = new System.Drawing.Point(220, 10);
+            this.lblCantidad.Location = new System.Drawing.Point(254, 6);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(18, 20);
+            this.lblCantidad.Size = new System.Drawing.Size(26, 29);
             this.lblCantidad.TabIndex = 3;
             this.lblCantidad.Text = "0";
             // 
@@ -81,7 +82,7 @@
             this.Controls.Add(this.btnRestar);
             this.Controls.Add(this.lblNombre);
             this.Name = "IngredienteControl";
-            this.Size = new System.Drawing.Size(302, 40);
+            this.Size = new System.Drawing.Size(332, 40);
             this.Load += new System.EventHandler(this.IngredienteControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

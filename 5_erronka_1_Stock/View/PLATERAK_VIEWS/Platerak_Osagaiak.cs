@@ -84,6 +84,7 @@ namespace _5_erronka_1_Stock.View.PLATERAK_VIEWS
                         control.Margin = new Padding(10);
                         control.btnRestar.Visible = false;
                         control.btnSumar.Visible = false;
+                        control.BackColor = Color.FromArgb(232, 158, 71);
 
                         flowLayoutPanel1.Controls.Add(control);
                     }
