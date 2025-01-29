@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="5_erronka_1_Stock.exe" size="348640">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="5_erronka_1_Stock.exe" size="362976">
       <assemblyIdentity name="5_erronka_1_Stock" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>NtqxUKjhsd9wtPyEqnLgYVbs8xWxyEsP1B5rOkswISI=</dsig:DigestValue>
+        <dsig:DigestValue>3J9JBFsozA/He0E+Q9IHC84mMLkVJA4oH7NTiQEwf8Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

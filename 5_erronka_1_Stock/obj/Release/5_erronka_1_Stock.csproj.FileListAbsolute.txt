@@ -69,3 +69,5 @@ C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Release\5_erronka
 C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Release\5_erronka_1_Stock.application
 C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\obj\Release\5_erronka_1_Stock.exe.manifest
 C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\obj\Release\5_erronka_1_Stock.application
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\bin\Release\Hbm_Xml\PlateraStock.hbm.xml
+C:\Users\asier\Desktop\5_erronka_1_Stock\5_erronka_1_Stock\obj\Release\_5_erronka_1_Stock.View.PLATERAK_VIEWS.Platerak_Edit.resources

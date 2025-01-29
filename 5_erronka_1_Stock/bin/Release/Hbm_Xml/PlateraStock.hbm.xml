@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="5_erronka_1_Stock"
+                   namespace="_5_erronka_1_Stock">
+
+
+	<class name="PlateraStock" table="almazena_platera">
+		<id name="Id" column="id" type="int">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="Platera" class="Platerak" column="platera_id" not-null="true" />
+		<many-to-one name="Almazena" class="Stock" column="almazena_id" not-null="true" />
+		<property name="Kantitatea" column="kantitatea" type="int" />
+	</class>
+
+</hibernate-mapping>

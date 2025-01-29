@@ -23,6 +23,10 @@
 		<property name="deleted_at" column="deleted_at" type="string"/>
 		<property name="deleted_by" column="deleted_by" type="int"/>
 
+		<bag name="PlateraStockak" inverse="true" cascade="all" fetch="join">
+			<key column="almazena_id" />
+			<one-to-many class="PlateraStock" />
+		</bag>
 
 	</class>
 
