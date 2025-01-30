@@ -64,7 +64,7 @@ namespace _5_erronka_1_Stock.Kudeatzaileak
                         Prezioa = prezioa,
                         Menu = menu,
                         created_by = idUsuario,
-                        created_at = DateTime.Now.ToString()
+                        created_at = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
                     };
 
                     session.Save(platera);
@@ -164,7 +164,7 @@ namespace _5_erronka_1_Stock.Kudeatzaileak
                         platera.Prezioa = prezioa;
                         platera.Menu = menu;
                         platera.updated_by = idUsuario;
-                        platera.updated_at = DateTime.Now.ToString();
+                        platera.updated_at = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
                         // Guardar los cambios en la base de datos
                         session.Update(platera);

@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>S3LHBd09ycbaZvmogkpiD9ufIdJcrAHBdKMKeqctcIc=</dsig:DigestValue>
+        <dsig:DigestValue>PX++Jn8m9QGHasBm/a/fJzmOks75xpNtOHnMzEPBufU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -305,13 +305,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="5_erronka_1_Stock.exe.config" size="1884">
+  <file name="5_erronka_1_Stock.exe.config" size="1875">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>HPdBHpvol8aZX9ssw8lwSdBqzFzo1wcTcWC4BvGN2es=</dsig:DigestValue>
+      <dsig:DigestValue>SSWOH52Lx+CNOxCvJ27ArOU5lKkoT8z6w2H7eqJwAU8=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
