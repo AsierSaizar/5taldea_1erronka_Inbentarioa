@@ -120,11 +120,11 @@ namespace _5_erronka_1_Stock
                 var selectedRow = dataGridView1.SelectedRows[0];
 
                 // Extraer datos de las columnas con manejo de valores null
-                var dataToPass_Id = selectedRow.Cells[1].Value?.ToString() ?? string.Empty;
-                var dataToPass_Izena = selectedRow.Cells[2].Value?.ToString() ?? string.Empty;
-                var dataToPass_Deskribapena = selectedRow.Cells[3].Value?.ToString() ?? string.Empty;
-                var dataToPass_PlateraMota = selectedRow.Cells[4].Value?.ToString() ?? string.Empty;
-                var dataToPass_prezioa = selectedRow.Cells[5].Value?.ToString() ?? string.Empty;
+                var dataToPass_Id = selectedRow.Cells["Id"].Value?.ToString() ?? string.Empty;
+                var dataToPass_Izena = selectedRow.Cells["Izena"].Value?.ToString() ?? string.Empty;
+                var dataToPass_Deskribapena = selectedRow.Cells["Deskribapena"].Value?.ToString() ?? string.Empty;
+                var dataToPass_PlateraMota = selectedRow.Cells["Platera_mota"].Value?.ToString() ?? string.Empty;
+                var dataToPass_prezioa = selectedRow.Cells["Prezioa"].Value?.ToString() ?? string.Empty;
 
 
                 Platerak_Osagaiak PO = new Platerak_Osagaiak(sessionFactory, idUsuario);
