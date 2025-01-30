@@ -156,14 +156,14 @@ namespace _5_erronka_1_Stock
                 var selectedRow = dataGridView1.SelectedRows[0];
 
                 // Extraer datos de las columnas con manejo de valores null
-                string dataToPass_Id = selectedRow.Cells[1].Value?.ToString() ?? string.Empty;
-                var dataToPass_Izena = selectedRow.Cells[2].Value?.ToString() ?? string.Empty;
-                var dataToPass_Mota = selectedRow.Cells[3].Value?.ToString() ?? string.Empty;
-                var dataToPass_Ezaugarriak = selectedRow.Cells[4].Value?.ToString() ?? string.Empty;
-                var dataToPass_StockKant = selectedRow.Cells[5].Value?.ToString() ?? string.Empty;
-                var dataToPass_Unitatea = selectedRow.Cells[6].Value?.ToString() ?? string.Empty;
-                var dataToPass_Min = selectedRow.Cells[7].Value?.ToString() ?? string.Empty;
-                var dataToPass_Max = selectedRow.Cells[8].Value?.ToString() ?? string.Empty;
+                string dataToPass_Id = selectedRow.Cells[0].Value?.ToString() ?? string.Empty;
+                var dataToPass_Izena = selectedRow.Cells[1].Value?.ToString() ?? string.Empty;
+                var dataToPass_Mota = selectedRow.Cells[2].Value?.ToString() ?? string.Empty;
+                var dataToPass_Ezaugarriak = selectedRow.Cells[3].Value?.ToString() ?? string.Empty;
+                var dataToPass_StockKant = selectedRow.Cells[4].Value?.ToString() ?? string.Empty;
+                var dataToPass_Unitatea = selectedRow.Cells[5].Value?.ToString() ?? string.Empty;
+                var dataToPass_Min = selectedRow.Cells[6].Value?.ToString() ?? string.Empty;
+                var dataToPass_Max = selectedRow.Cells[7].Value?.ToString() ?? string.Empty;
 
                 Stock_Edit SE = new Stock_Edit(sessionFactory, idUsuario);
 
